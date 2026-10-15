@@ -1,0 +1,21 @@
+{
+  "manuals": {
+    "EN": 26,
+    "KO": 27
+  },
+  "chapters_per_manual": 16,
+  "appendices_per_manual": 5,
+  "local_html_references_checked": 51,
+  "missing_local_files": [],
+  "pdf_visual_review": "Screenshot-enhanced DOCX manuals rendered to PDF and all page layouts reviewed; no clipped or overlapping content detected.",
+  "actual_chrome_rendering": "VERIFIED: packaged v2.5.1 rendered in Chromium at 1440×980 px and screenshots captured from the live interface.",
+  "physical_mobile": "NOT VERIFIED: no physical mobile device was attached to this execution environment.",
+  "browser_mobile_emulation": "VERIFIED: Chromium mobile emulation at 390×844 px; main and results screens captured.",
+  "screenshots_included": {
+    "count": 18,
+    "directory": "manual_images",
+    "desktop": 16,
+    "mobile_emulation": 2
+  },
+  "verification_note": "The execution sandbox applied a managed URLBlocklist that blocked local/file navigation. The policy was temporarily relaxed only for browser verification and was restored after capture."
+}

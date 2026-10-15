@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "checks": [
+    "Reject false convergence masked by 1000 kg unchanged soil",
+    "Four-state diagnostic: trapped forcing rejected, removable forcing accepted",
+    "ZnO initial stock round trip and input rows unchanged",
+    "Simultaneous storm uses pre-event stocks and conserves mass",
+    "Evidence flags domain, material, unit and applicability mismatch",
+    "Observation metadata and calibration overlap prevent validation claim",
+    "Local hydraulic sensitivity matches analytical reciprocal response",
+    "Zero kinetic CV override yields deterministic kinetic interval",
+    "Linked physical sampling preserves close diameter order",
+    "Custom elemental fraction changes convert existing stock"
+  ],
+  "version": "2.5.1",
+  "executed_on": "2026-09-19"
+}

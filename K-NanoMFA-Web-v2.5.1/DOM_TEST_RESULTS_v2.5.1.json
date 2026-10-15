@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "engine": "jsdom 26.1.0",
+  "checks": [
+    "unique DOM IDs",
+    "DOM initialization",
+    "font density selection",
+    "base calculation",
+    "nanoform example",
+    "element mass basis",
+    "observed/predicted identity",
+    "stale input prevention",
+    "coupling CSV roundtrip",
+    "scenario observation retention",
+    "XLSX byte export/import and SI-unit roundtrip",
+    "invalid residence blocked",
+    "research panel initialization",
+    "parameter evidence save",
+    "calibration dataset IDs",
+    "evidence XLSX roundtrip",
+    "unqualified observation excluded from validation count",
+    "empty/stale research diagnostics"
+  ],
+  "limitations": "Plotly stubbed. Real browser rendering, mobile layout, download interaction and visual QA NOT verified.",
+  "errors": [],
+  "alerts": [],
+  "version": "2.5.1",
+  "executed_on": "2026-09-19"
+}

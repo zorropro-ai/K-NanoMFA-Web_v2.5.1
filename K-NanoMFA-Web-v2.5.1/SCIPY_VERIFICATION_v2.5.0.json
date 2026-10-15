@@ -1,0 +1,17 @@
+[
+  {
+    "rate_scale": 0,
+    "stock_max_abs_error_kg": 4.440892098500626e-16,
+    "occupancy_max_abs_error_kg_y": 2.220446049250313e-16
+  },
+  {
+    "rate_scale": 1,
+    "stock_max_abs_error_kg": 3.057776254422606e-12,
+    "occupancy_max_abs_error_kg_y": 5.437872374614017e-13
+  },
+  {
+    "rate_scale": 10,
+    "stock_max_abs_error_kg": 7.72581998376154e-12,
+    "occupancy_max_abs_error_kg_y": 1.8920420785661918e-12
+  }
+]

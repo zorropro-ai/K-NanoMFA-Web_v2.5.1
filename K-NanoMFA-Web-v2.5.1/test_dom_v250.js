@@ -1,0 +1,37 @@
+// Event/DOM integration test with jsdom. This does NOT test browser rendering or Plotly.
+const fs=require('fs'),path=require('path'),assert=require('assert');
+const {JSDOM,VirtualConsole}=require('jsdom');
+(async()=>{
+ const root=__dirname,raw=fs.readFileSync(path.join(root,'index.html'),'utf8'),scripts=[...raw.matchAll(/<script[^>]+src="([^"?]+)[^"]*"[^>]*><\/script>/g)].map(m=>m[1]);
+ const html=raw.replace(/<script[^>]+src="[^"]+"[^>]*><\/script>/g,'').replace(/<link[^>]+rel="stylesheet"[^>]*>/g,'<style>'+fs.readFileSync(path.join(root,'styles.css'),'utf8')+'</style>');
+ const allIds=[...html.matchAll(/\bid="([^"]+)"/g)].map(x=>x[1]);assert.equal(allIds.length,new Set(allIds).size,'duplicate DOM IDs');
+ const errors=[],alerts=[],vc=new VirtualConsole();vc.on('jsdomError',e=>{if(!/navigation|Could not parse CSS/.test(e.message))errors.push(e.message)});
+ const dom=new JSDOM(html,{runScripts:'outside-only',url:'https://local-test.invalid/',pretendToBeVisual:true,virtualConsole:vc}),w=dom.window;
+ await new Promise(resolve=>w.document.addEventListener('DOMContentLoaded',resolve,{once:true}));
+ w.TextEncoder=TextEncoder;w.TextDecoder=TextDecoder;w.structuredClone=structuredClone;w.confirm=()=>true;w.alert=s=>alerts.push(s);w.matchMedia=()=>({matches:false,addEventListener(){}});w.HTMLElement.prototype.scrollIntoView=()=>{};w.scrollTo=()=>{};
+ w.Plotly={react:()=>Promise.resolve(),newPlot:()=>Promise.resolve(),purge(){},addTraces(){},Plots:{resize(){}}};
+ for(const file of scripts)if(file!=='plotly.min.js')w.eval(fs.readFileSync(path.join(root,file),'utf8'));
+ w.document.dispatchEvent(new w.Event('DOMContentLoaded'));
+ assert.deepEqual(errors,[],'initialization errors');
+ const A=w.KNanoApp,F=w.KNanoDynamicFate,U=w.KNanoReliabilityUI,$=id=>w.document.getElementById(id);
+ const change=(id,value)=>{const el=$(id);if(typeof value==='boolean')el.checked=value;else el.value=value;el.dispatchEvent(new w.Event('change',{bubbles:true}));};
+ assert.equal(w.document.documentElement.dataset.density,'compact');change('textDensity','standard');assert.equal(w.document.documentElement.dataset.density,'standard');change('textDensity','compact');
+ A.calculate();assert(A.state.result,alerts.join('\n'));assert(U.inputsCurrent());
+ w.KNanoUIv211.sampleScenario('nanoform');assert.equal(A.validate().length,0);A.calculate();assert(F.getOutputs(),alerts.join('\n'));assert.equal(F.getOutputs().tracking_basis,'selected_material_equivalent');
+ change('dynamicFateTrackingBasis','constituent_element_equivalent');assert(F.getOutputs());
+ change('dynamicFateMaxYears','2000');const o=F.getOutputs();assert(o.converged,JSON.stringify({material:A.materialDisplayName(),last:o.annual.at(-1)}));U.loadState({observations:[{id:'identity',material:A.materialDisplayName(),domain_id:A.currentRegion().domain_id,model_source:'fate28',medium:'water',form:'total',tracking_basis:o.tracking_basis,statistic:'steady_state',year:Number($('baseYear').value),observed:o.final_concentrations.total.water,unit:'ug/L',role:'validation',source_note:'Synthetic identity test',qualifier:'='}]});
+ const result=U.compare();assert(result);assert.equal(result.pairs.length,1,JSON.stringify(result));assert(Math.abs(result.pairs[0].ratio-1)<1e-10);
+ $('totalMass').value=Number($('totalMass').value)*2;assert.equal(U.compare(),null,'stale input must not compare');A.calculate();assert(U.compare());
+ const csv=F.couplingCsv(),parsed=F.parseExternalCsvDetailed(csv,F.getState());assert.equal(parsed.errors.length,0,JSON.stringify(parsed.errors));assert(parsed.rows.length>0);
+ const scenario=A.scenario();assert(scenario.reliability.observations.length);
+ const bytes=w.KNanoExcel.buildWorkbook(w.KNanoExcel.objectSheets(scenario));const imported=await w.KNanoExcel.importObject({arrayBuffer:async()=>bytes.buffer});assert.equal(imported.reliability.observations.length,1);assert.equal(imported.dynamic_fate.tracking_basis,scenario.dynamic_fate.tracking_basis);assert.equal(imported.environment.soil_area_ha,scenario.environment.soil_area_ha);
+A.applyScenario(scenario,false);A.calculate();assert(U.compare().pairs.length);
+ change('dynamicFateWaterResidence','-1');assert(A.validate().length>0);assert.equal(F.getOutputs(),null);change('dynamicFateWaterResidence','30');A.calculate();assert(F.getOutputs());
+ assert($('researchPanel'));assert($('evidenceParameter').options.length>20);
+ change('evidenceParameter','rates.water_free_settling_y');$('ev_source').value='Synthetic DOM test record';$('ev_evidence_type').value='literature';$('ev_conditions').value='Synthetic';$('saveEvidence').click();assert(F.getState().evidence_register.some(x=>x.source==='Synthetic DOM test record'));
+ change('calibrationDatasets','TRAIN_001, TRAIN_002');assert.equal(F.getState().calibration_dataset_ids.length,2);
+ const stored=A.scenario();const bytes2=w.KNanoExcel.buildWorkbook(w.KNanoExcel.objectSheets(stored));const restored=await w.KNanoExcel.importObject({arrayBuffer:async()=>bytes2.buffer});assert.equal(restored.dynamic_fate.calibration_dataset_ids.length,2);assert(restored.dynamic_fate.evidence_register.length);
+ assert.equal(U.compare().eligible_validation_pairs,0,'Unqualified synthetic observation cannot establish independent validation');
+ assert.deepEqual(JSON.parse(JSON.stringify(w.KNanoResearchUI.getDiagnostics())),{});
+ const report={status:'passed',engine:'jsdom 26.1.0',checks:['unique DOM IDs','DOM initialization','font density selection','base calculation','nanoform example','element mass basis','observed/predicted identity','stale input prevention','coupling CSV roundtrip','scenario observation retention','XLSX byte export/import and SI-unit roundtrip','invalid residence blocked','research panel initialization','parameter evidence save','calibration dataset IDs','evidence XLSX roundtrip','unqualified observation excluded from validation count','empty/stale research diagnostics'],limitations:'Plotly stubbed. Real browser rendering, mobile layout, download interaction and visual QA NOT verified.',errors,alerts};assert.deepEqual(errors,[]);fs.writeFileSync(path.join(root,'DOM_TEST_RESULTS_v2.5.0.json'),JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));w.close();
+})().catch(e=>{console.error(e);process.exit(1)});

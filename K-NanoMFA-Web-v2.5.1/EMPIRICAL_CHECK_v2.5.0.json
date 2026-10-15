@@ -1,0 +1,63 @@
+{
+  "version": "2.5.0",
+  "source": {
+    "doi": "10.1016/j.scitotenv.2020.142017",
+    "pmid": "32898809",
+    "title": "Concentrations and size distribution of TiO2 and Ag engineered particles in five wastewater treatment plants in the United States.",
+    "authors": "Nabi et al.",
+    "year": 2021,
+    "access": "Europe PMC primary bibliographic record and abstract; full text not inspected",
+    "Ag_influent_ug_L": [
+      0.11,
+      0.33
+    ],
+    "Ag_effluent_ug_L": [
+      0.01,
+      0.04
+    ],
+    "Ag_removal_pct": [
+      82,
+      95
+    ],
+    "TiO2_influent_ug_L": [
+      70,
+      670
+    ],
+    "TiO2_effluent_ug_L": [
+      7,
+      30
+    ],
+    "TiO2_removal_pct": [
+      90,
+      96
+    ]
+  },
+  "normalization_flow_m3_year": 1000000,
+  "normalization_is_measured": false,
+  "runs": [
+    {
+      "influent_ug_L": 0.11,
+      "model_tracked_effluent_ug_L": 0.0022,
+      "tracked_effluent_fraction": 0.02,
+      "transformed_outside_tracking_fraction": 0.08,
+      "mass_balance_closure_pct": 100
+    },
+    {
+      "influent_ug_L": 0.33,
+      "model_tracked_effluent_ug_L": 0.006600000000000001,
+      "tracked_effluent_fraction": 0.02,
+      "transformed_outside_tracking_fraction": 0.08,
+      "mass_balance_closure_pct": 100
+    }
+  ],
+  "range_overlap": false,
+  "independent_PEC_validation": false,
+  "interpretation": "The 2% tracked-effluent factor produces 0.0022–0.0066 ug/L, below the published 0.01–0.04 ug/L aggregate total-Ag range. This is a warning about applicability and measurand alignment, not proof of a same-measurand predictive error. The model also transfers 8% outside the tracked parent-material boundary; its aqueous destination is unspecified. Total-Ag comparison requires this transformed fraction to be resolved. No default fitting was performed.",
+  "limitations": [
+    "Aggregate ranges are not paired plant observations.",
+    "Sampling year, plant flows, influent composition and analytical fractions are not available in the inspected abstract.",
+    "Total Ag proxy may not equal tracked particle-equivalent Ag.",
+    "US wastewater plants do not validate Korean ambient water, air, soil or sediment PEC.",
+    "No paired RMSE, R2 or holdout validation is claimed."
+  ]
+}

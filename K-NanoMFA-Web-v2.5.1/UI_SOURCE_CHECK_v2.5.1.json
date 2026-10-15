@@ -1,0 +1,9 @@
+{
+  "version": "2.5.1",
+  "date": "2026-09-19",
+  "syntax_files": 35,
+  "html_link_files": 5,
+  "status": "passed",
+  "browser_rendering": "blocked by file protocol security policy; not verified",
+  "mobile_rendering": "not verified"
+}

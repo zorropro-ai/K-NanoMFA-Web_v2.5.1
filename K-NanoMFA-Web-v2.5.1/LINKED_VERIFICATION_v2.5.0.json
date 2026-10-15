@@ -1,0 +1,545 @@
+{
+  "scenario": "Synthetic AgNP 100 kg/year for 2025–2027, default upstream composition; not field data",
+  "context": {
+    "material": "AgNP",
+    "region": {
+      "region": "Republic of Korea (national)",
+      "population": 52705574,
+      "area_km2": 100459.873,
+      "sewer_population": 50394767,
+      "wwtp_flow_m3_y": 7471262603.55,
+      "sludge_wet_t_y": 4458053.3,
+      "sludge_moisture_pct": 85.2,
+      "sludge_dry_t_y": 659791.8884,
+      "country_code": "KR",
+      "country": "Republic of Korea",
+      "domain_level": "national",
+      "domain_id": "KR-national",
+      "river_flow_m3_s_default": 2029,
+      "data_quality": "official_2024"
+    },
+    "environment": {
+      "river_flow_m3_s": 100,
+      "soil_area_ha": 1000,
+      "soil_depth_m": 0.2,
+      "soil_bulk_density_kg_m3": 1300,
+      "soil_residence_time_y": 10,
+      "water_to_sediment_pct": 20,
+      "sediment_area_km2": 1,
+      "sediment_depth_m": 0.05,
+      "sediment_bulk_density_kg_m3": 1300,
+      "sediment_residence_time_y": 10,
+      "air_mixing_height_m": 1000,
+      "air_turnovers_y": 365
+    },
+    "baseYear": 2025,
+    "mfa_args": {
+      "description": "Silver nanoparticles (AgNP). Screening scenario covering electronics, antimicrobial textiles, personal-care products, medical products, and coatings.",
+      "products": [
+        {
+          "product_category": "Electrical and electronic products",
+          "allocation_pct": 30,
+          "use_air_pct": 0.05,
+          "use_direct_water_pct": 0.01,
+          "use_wwtp_pct": 0.04,
+          "use_soil_pct": 0
+        },
+        {
+          "product_category": "Antimicrobial textiles",
+          "allocation_pct": 25,
+          "use_air_pct": 0.2,
+          "use_direct_water_pct": 1,
+          "use_wwtp_pct": 15,
+          "use_soil_pct": 0.1
+        },
+        {
+          "product_category": "Cosmetics and personal care",
+          "allocation_pct": 20,
+          "use_air_pct": 0.1,
+          "use_direct_water_pct": 5,
+          "use_wwtp_pct": 60,
+          "use_soil_pct": 0.1
+        },
+        {
+          "product_category": "Medical and hygiene products",
+          "allocation_pct": 15,
+          "use_air_pct": 0.1,
+          "use_direct_water_pct": 1,
+          "use_wwtp_pct": 10,
+          "use_soil_pct": 0.1
+        },
+        {
+          "product_category": "Paints and consumer-product coatings",
+          "allocation_pct": 10,
+          "use_air_pct": 0.5,
+          "use_direct_water_pct": 3,
+          "use_wwtp_pct": 1,
+          "use_soil_pct": 1
+        }
+      ],
+      "eol": [
+        {
+          "product_category": "Electrical and electronic products",
+          "incineration_pct": 8,
+          "landfill_pct": 10,
+          "recycling_pct": 80,
+          "reuse_pct": 2,
+          "biological_treatment_pct": 0
+        },
+        {
+          "product_category": "Antimicrobial textiles",
+          "incineration_pct": 58,
+          "landfill_pct": 17,
+          "recycling_pct": 23,
+          "reuse_pct": 2,
+          "biological_treatment_pct": 0
+        },
+        {
+          "product_category": "Cosmetics and personal care",
+          "incineration_pct": 40,
+          "landfill_pct": 25,
+          "recycling_pct": 25,
+          "reuse_pct": 0,
+          "biological_treatment_pct": 10
+        },
+        {
+          "product_category": "Medical and hygiene products",
+          "incineration_pct": 75,
+          "landfill_pct": 15,
+          "recycling_pct": 8,
+          "reuse_pct": 0,
+          "biological_treatment_pct": 2
+        },
+        {
+          "product_category": "Paints and consumer-product coatings",
+          "incineration_pct": 45,
+          "landfill_pct": 45,
+          "recycling_pct": 8,
+          "reuse_pct": 2,
+          "biological_treatment_pct": 0
+        }
+      ],
+      "total": 100,
+      "factors": {
+        "WWTP": {
+          "effluent": 2,
+          "sludge": 90,
+          "transformation_non_nano": 8
+        },
+        "incineration": {
+          "air": 0.1,
+          "fly_ash_to_landfill": 10,
+          "bottom_ash_recovery": 84,
+          "thermal_transformation_loss": 5.9
+        },
+        "landfill": {
+          "landfill_stock": 98,
+          "leachate_to_surface_water": 0.5,
+          "runoff_to_surface_water": 0.5,
+          "fugitive_dust_to_air": 0.1,
+          "transformation": 0.9
+        },
+        "recycling": {
+          "recovered_product": 88,
+          "wastewater_to_wwtp": 4,
+          "air": 0.5,
+          "residue_to_incineration": 3.5,
+          "residue_to_landfill": 3,
+          "transformation": 1
+        },
+        "reuse": {
+          "extended_use_stock": 97,
+          "air": 0.2,
+          "surface_water": 0.5,
+          "WWTP": 2,
+          "soil": 0.3
+        },
+        "biological_treatment": {
+          "soil_compost": 45,
+          "surface_water": 5,
+          "air": 0.5,
+          "biodegradation_transformation": 49.5
+        }
+      },
+      "sludge": {
+        "incineration": 16.9,
+        "landfill": 0.2,
+        "soil_compost": 31.4,
+        "fuel_product_feedstock": 47,
+        "other_unclassified": 4.5
+      },
+      "lifetimes": [
+        {
+          "product_category": "Electrical and electronic products",
+          "mean_lifetime_y": 7,
+          "weibull_shape": 2.8,
+          "use_release_duration_y": 7
+        },
+        {
+          "product_category": "Antimicrobial textiles",
+          "mean_lifetime_y": 4,
+          "weibull_shape": 2.2,
+          "use_release_duration_y": 4
+        },
+        {
+          "product_category": "Cosmetics and personal care",
+          "mean_lifetime_y": 1,
+          "weibull_shape": 2,
+          "use_release_duration_y": 1
+        },
+        {
+          "product_category": "Medical and hygiene products",
+          "mean_lifetime_y": 1,
+          "weibull_shape": 2,
+          "use_release_duration_y": 1
+        },
+        {
+          "product_category": "Paints and consumer-product coatings",
+          "mean_lifetime_y": 8,
+          "weibull_shape": 2.5,
+          "use_release_duration_y": 8
+        }
+      ],
+      "dynamicSettings": {
+        "start_year": 2025,
+        "end_year": 2027,
+        "initial_input_kg_y": 100,
+        "annual_growth_pct": 0,
+        "closed_loop_recycling_pct": 0,
+        "recycling_delay_y": 1,
+        "reuse_delay_y": 1,
+        "initial_landfill_stock_kg": 0
+      },
+      "trajectory": [
+        {
+          "year": 2025,
+          "primary_input_kg_y": 100
+        },
+        {
+          "year": 2026,
+          "primary_input_kg_y": 100
+        },
+        {
+          "year": 2027,
+          "primary_input_kg_y": 100
+        }
+      ],
+      "region": {
+        "region": "Republic of Korea (national)",
+        "population": 52705574,
+        "area_km2": 100459.873,
+        "sewer_population": 50394767,
+        "wwtp_flow_m3_y": 7471262603.55,
+        "sludge_wet_t_y": 4458053.3,
+        "sludge_moisture_pct": 85.2,
+        "sludge_dry_t_y": 659791.8884,
+        "country_code": "KR",
+        "country": "Republic of Korea",
+        "domain_level": "national",
+        "domain_id": "KR-national",
+        "river_flow_m3_s_default": 2029,
+        "data_quality": "official_2024"
+      },
+      "env": {
+        "river_flow_m3_s": 100,
+        "soil_area_ha": 1000,
+        "soil_depth_m": 0.2,
+        "soil_bulk_density_kg_m3": 1300,
+        "soil_residence_time_y": 10,
+        "water_to_sediment_pct": 20,
+        "sediment_area_km2": 1,
+        "sediment_depth_m": 0.05,
+        "sediment_bulk_density_kg_m3": 1300,
+        "sediment_residence_time_y": 10,
+        "air_mixing_height_m": 1000,
+        "air_turnovers_y": 365
+      }
+    },
+    "releaseForms": {
+      "air": {
+        "free_nanoform_pct": 35,
+        "matrix_associated_pct": 35,
+        "transformed_dissolved_pct": 20,
+        "unknown_pct": 10
+      },
+      "surface_water": {
+        "free_nanoform_pct": 15,
+        "matrix_associated_pct": 25,
+        "transformed_dissolved_pct": 50,
+        "unknown_pct": 10
+      },
+      "soil": {
+        "free_nanoform_pct": 10,
+        "matrix_associated_pct": 35,
+        "transformed_dissolved_pct": 45,
+        "unknown_pct": 10
+      }
+    },
+    "nanoform_config": {
+      "schema": "K-NanoMFA-nanoform-state-v1",
+      "enabled": true,
+      "material_preset": "persistent_oxide",
+      "embedding_preset": "bulk_matrix",
+      "product_state_pct": {
+        "matrix_bound": 85,
+        "free_particulate": 3,
+        "aggregated": 3,
+        "dissolved": 0,
+        "transformed_particulate": 4,
+        "unresolved": 5
+      },
+      "medium_splits": {
+        "air": {
+          "free_within_free_agg_pct": 65,
+          "dissolved_within_transformed_pct": 15
+        },
+        "surface_water": {
+          "free_within_free_agg_pct": 25,
+          "dissolved_within_transformed_pct": 65
+        },
+        "soil": {
+          "free_within_free_agg_pct": 15,
+          "dissolved_within_transformed_pct": 30
+        }
+      },
+      "evidence_class": "E",
+      "source_note": "Screening state-transition assumptions; replace with nanoform- and pathway-specific evidence.",
+      "limitations": "State allocations preserve mass but do not mechanistically simulate size distributions, heteroaggregation, coating loss, or reaction kinetics."
+    }
+  },
+  "config": {
+    "schema": "K-NanoMFA-dynamic-nanoform-fate-v2.5.0",
+    "enabled": true,
+    "preset": "persistent_oxide",
+    "numerical_solver": "exact_linear",
+    "solver_tolerance": 1e-11,
+    "substeps_per_year": 12,
+    "legacy_refinement_audit": false,
+    "tracking_basis": "selected_material_equivalent",
+    "element_symbol": "",
+    "element_mass_fraction": "",
+    "advection_mode": "hydraulic",
+    "process_model": {
+      "enabled": false,
+      "water_depth_m": "",
+      "viscosity_pa_s": "",
+      "water_density_kg_m3": 1000,
+      "particle_density_kg_m3": "",
+      "free_diameter_nm": "",
+      "small_diameter_nm": "",
+      "large_diameter_nm": "",
+      "attachment_efficiency": "",
+      "collision_kernel_m3_s": "",
+      "background_number_m3": ""
+    },
+    "rate_evidence": {},
+    "evidence_register": [],
+    "calibration_dataset_ids": [],
+    "migration_notes": [],
+    "water_residence_time_days": 30,
+    "large_fraction_of_aggregated_pct": 35,
+    "max_static_years": 1000,
+    "convergence_tolerance": 1e-7,
+    "rates": {
+      "air_matrix_weathering_y": 0.15,
+      "water_matrix_weathering_y": 0.35,
+      "soil_matrix_weathering_y": 0.08,
+      "sediment_matrix_weathering_y": 0.03,
+      "air_free_to_small_y": 1.5,
+      "water_free_to_small_y": 2.2,
+      "soil_free_to_small_y": 0.7,
+      "sediment_free_to_small_y": 0.35,
+      "air_small_to_large_y": 0.35,
+      "water_small_to_large_y": 0.85,
+      "soil_small_to_large_y": 0.25,
+      "sediment_small_to_large_y": 0.18,
+      "air_large_fragmentation_y": 0.08,
+      "water_large_fragmentation_y": 0.12,
+      "soil_large_fragmentation_y": 0.03,
+      "sediment_large_fragmentation_y": 0.02,
+      "air_particulate_dissolution_y": 0,
+      "water_matrix_dissolution_y": 0.015,
+      "water_free_dissolution_y": 0.08,
+      "water_small_dissolution_y": 0.04,
+      "water_large_dissolution_y": 0.015,
+      "soil_particulate_dissolution_y": 0.015,
+      "sediment_particulate_dissolution_y": 0.008,
+      "air_particulate_transformation_y": 0.04,
+      "water_particulate_transformation_y": 0.08,
+      "soil_particulate_transformation_y": 0.12,
+      "sediment_particulate_transformation_y": 0.07,
+      "water_dissolved_reprecipitation_y": 0.03,
+      "soil_dissolved_reprecipitation_y": 0.12,
+      "sediment_dissolved_reprecipitation_y": 0.18,
+      "water_transformed_dissolution_y": 0.01,
+      "soil_transformed_dissolution_y": 0.004,
+      "sediment_transformed_dissolution_y": 0.003,
+      "air_to_water_y": 18,
+      "air_to_soil_y": 45,
+      "water_to_soil_y": 0.015,
+      "soil_runoff_to_water_y": 0.01,
+      "soil_erosion_to_sediment_y": 0.004,
+      "soil_to_air_y": 0.002,
+      "sediment_resuspension_to_water_y": 0.025,
+      "sediment_dissolved_exchange_to_water_y": 0.05,
+      "water_matrix_settling_y": 0.55,
+      "water_free_settling_y": 0.12,
+      "water_small_settling_y": 0.65,
+      "water_large_settling_y": 3.5,
+      "water_transformed_settling_y": 1.1,
+      "water_unresolved_settling_y": 0.35,
+      "air_advective_y": 20,
+      "water_advective_particulate_y": 4,
+      "water_advective_dissolved_y": 12,
+      "soil_irreversible_retention_y": 0.015,
+      "sediment_burial_y": 0.04,
+      "air_non_nano_loss_y": 0,
+      "water_non_nano_loss_y": 0,
+      "soil_non_nano_loss_y": 0,
+      "sediment_non_nano_loss_y": 0
+    },
+    "initial_stock_kg": {
+      "air": 0,
+      "water": 0,
+      "soil": 0,
+      "sediment": 0
+    },
+    "initial_profile_pct": {
+      "matrix_bound": 10,
+      "free_particle": 20,
+      "small_aggregate": 35,
+      "large_aggregate": 20,
+      "dissolved": 5,
+      "transformed_particle": 5,
+      "unresolved": 5
+    },
+    "storm": {
+      "enabled": false,
+      "event_years": "",
+      "soil_to_water_pct": 1.5,
+      "soil_to_sediment_pct": 0.7,
+      "sediment_to_water_pct": 0.5
+    },
+    "external_coupling": {
+      "enabled": false,
+      "mode": "dynamic",
+      "missing_year_policy": "reject",
+      "rows": [],
+      "source_note": "",
+      "import_report": {
+        "errors": [],
+        "warnings": [],
+        "row_count": 0
+      }
+    },
+    "uncertainty": {
+      "enabled": true,
+      "mode": "linked",
+      "iterations": 1000,
+      "seed": 73,
+      "cv": 0.25,
+      "group_correlation": 0.3,
+      "within_group_correlation": 0.5,
+      "input_cv": 0.25,
+      "environment_cv": 0.2,
+      "form_cv": 0.2
+    },
+    "evidence_class": "E",
+    "source_note": "Screening kinetic parameters; replace with nanoform-, medium-, pathway-, and region-specific evidence.",
+    "limitations": "Linear first-order, spatially aggregated state-transition model. It does not resolve full particle-size distributions, geochemistry, watershed hydraulics, or local concentration gradients."
+  },
+  "result": {
+    "schema": "K-NanoMFA-linked-uncertainty-v2.5.0",
+    "iterations": 1000,
+    "mode": "linked",
+    "summary": {
+      "air": {
+        "P5": 0.000007781413152802328,
+        "P50": 0.000016505288693401567,
+        "P95": 0.00006249540420552241
+      },
+      "water": {
+        "P5": 0.0002251900858002831,
+        "P50": 0.0004952234974416197,
+        "P95": 0.0011689599087736755
+      },
+      "soil": {
+        "P5": 1.3289844155133774,
+        "P50": 4.3778989607376015,
+        "P95": 12.4650078111702
+      },
+      "sediment": {
+        "P5": 1.1563432939487106,
+        "P50": 3.3869408040808544,
+        "P95": 8.830993699782002
+      },
+      "stock": {
+        "P5": 4.2587537182134945,
+        "P50": 10.896670614493095,
+        "P95": 28.0172440056321
+      },
+      "dissolved_share": {
+        "P5": 8.987489919254973,
+        "P50": 12.008647852412853,
+        "P95": 15.855608349055705
+      },
+      "large_aggregate_share": {
+        "P5": 2.9923281336529786,
+        "P50": 4.231255118789607,
+        "P95": 5.74664562948415
+      },
+      "closure": {
+        "P5": 99.99999999999994,
+        "P50": 100,
+        "P95": 100.00000000000004
+      }
+    },
+    "half_to_full_relative_quantile_change": {
+      "air": {
+        "P5": 0.05473975465531912,
+        "P50": 0.02042965380842607,
+        "P95": 0.0307821036117504
+      },
+      "water": {
+        "P5": 0.05244940767626051,
+        "P50": 0.005682423561268985,
+        "P95": 0.033970948749663804
+      },
+      "soil": {
+        "P5": 0.07006477636185646,
+        "P50": 0.012086603166881336,
+        "P95": 0.009617450463206946
+      },
+      "sediment": {
+        "P5": 0.037868784281659316,
+        "P50": 0.03323553314235258,
+        "P95": 0.06643845253056767
+      }
+    },
+    "converged_samples": 1000,
+    "seed": 73,
+    "configuration": {
+      "enabled": true,
+      "mode": "linked",
+      "iterations": 1000,
+      "seed": 73,
+      "cv": 0.25,
+      "group_correlation": 0.3,
+      "within_group_correlation": 0.5,
+      "input_cv": 0.25,
+      "environment_cv": 0.2,
+      "form_cv": 0.2
+    },
+    "mass_basis": {
+      "tracking_basis": "selected_material_equivalent",
+      "element": "Ag",
+      "fraction": 1,
+      "label": "AgNP parent-material-equivalent mass",
+      "input_basis": "selected_material_equivalent",
+      "input_conversion_factor": 1
+    },
+    "interval": "Central 90% simulation interval, conditional on selected distributions and model structure.",
+    "scope": "Market inflow, allocation, use release, treatment, EoL, lifetimes, release forms, environment, residence time and kinetics.",
+    "limitations": "Not a field-validated predictive interval. Model-structure uncertainty, measurement error, background concentrations and all possible cross-parameter dependencies are not included. Product input quantities use a shared market-scale multiplier."
+  }
+}

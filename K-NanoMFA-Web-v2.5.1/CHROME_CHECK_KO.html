@@ -1,0 +1,19 @@
+<!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Chrome 화면 확인 안내</title><style>body{font:15px/1.7 system-ui,sans-serif;max-width:850px;margin:32px auto;padding:0 20px;word-break:keep-all;overflow-wrap:break-word}h1{font-size:24px}h2{font-size:19px}li{margin:12px 0}code{font-size:14px}a{color:#086375}</style><body>
+<h1>K-NanoMFA v2.5.1 · Chrome 화면 확인 안내</h1>
+<p><a href="index.html">프로그램</a> · <a href="USER_MANUAL_KO.html">한글 안내</a> · <a href="USER_MANUAL_EN.html">English guide</a></p>
+<h2>어디에서 막혔나요?</h2>
+<p>제작 작업 폴더에서 ZIP을 해제했고 소스도 수정했습니다. 연결된 원격 브라우저가 그 폴더의 file:// 주소를 여는 단계에서 접근 정책으로 차단됐습니다. 이것은 교수님 PC의 Chrome 설정 오류라는 뜻이 아닙니다. 압축을 다시 풀거나 파일 경로만 보내도 원격 브라우저에 접근 권한이 생기지는 않습니다.</p>
+<p>현재 실제 Chrome의 그래프·글자 배치와 실제 휴대전화 터치 동작은 검증 완료 상태가 아닙니다. 보안 설정을 끄거나 브라우저 실행 옵션을 바꿀 필요는 없습니다.</p>
+<h2>Windows Chrome에서 확인해 보내실 자료</h2>
+<ol>
+<li>새 ZIP을 새 폴더에 완전히 풉니다. 폴더 안의 <code>index.html</code>을 Chrome으로 엽니다. HTML 파일만 따로 옮기지 마세요.</li>
+<li>Ctrl+0으로 브라우저 확대를 100%로 맞춥니다. 화면 버전 v2.5.1과 Text size 선택값을 확인합니다. 창을 최대화한 상태에서 Analysis navigator와 Feature directory 버튼이 보이는 화면을 캡처합니다.</li>
+<li>시작 예시를 선택하고 Calculate를 실행한 뒤 Results의 Sankey와 PEC 결과를 확인합니다. 빈 그래프, 잘린 축·범례, 글자 잘림이 있으면 해당 화면과 재현 순서를 보내주세요.</li>
+<li>F12로 개발자 도구를 열고 Console 탭을 선택합니다. 문제가 생기는 동작을 다시 한 뒤 빨간 오류가 있으면 전체 오류 문구를 복사하거나 캡처합니다. 명령어를 입력할 필요는 없습니다. 개인정보가 보이면 가려주세요.</li>
+<li>개발자 도구에서 Ctrl+Shift+M을 누르고 Responsive를 선택합니다. 화면 크기를 390 × 844, 이어서 360 × 800으로 설정하고, 탐색 메뉴와 결과 그래프를 각각 캡처합니다. 이 검사는 PC에서 작은 화면을 모사한 것으로 실제 휴대전화 검증과 다릅니다.</li>
+</ol>
+<p>우선 데스크톱 탐색 메뉴 1장, 결과 그래프 1장, 390 × 844 화면 1장을 보내주시면 표시 문제를 구체적으로 좁힐 수 있습니다. 함께 알려주실 내용은 운영체제, Chrome 버전, Text size, 실행한 예시와 버튼 순서입니다. 특정 입력에서만 문제가 나면 공개 가능한 시험용 시나리오 Excel도 첨부해 주세요.</p>
+<h2>제가 직접 접속할 수 있는 경우</h2>
+<p>프로그램이 이미 기관 서버 등에 게시되어 있다면 실제 프로그램이 실행되는 https 주소를 보내주세요. ZIP 다운로드 주소나 교수님 PC의 C: 경로는 실행 주소가 아닙니다. 제공된 웹 주소의 접근 가능 여부부터 확인할 수 있습니다. 교수님 PC의 localhost는 원격 브라우저의 localhost와 다르므로 그 주소만 보내서는 연결되지 않습니다.</p>
+<p>실제 휴대전화 확인에는 휴대전화에서 접근 가능한 실행 주소가 필요합니다. 지금 단계에서 새 공개 게시나 PC 포트 개방을 요구하지 않습니다.</p>
+</body></html>

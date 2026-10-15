@@ -1,0 +1,5168 @@
+{
+  "scenario": "Synthetic three-year Ag forcing of 1 kg/year into each medium; not field observations",
+  "context": {
+    "material": "AgNP",
+    "region": {
+      "region": "Republic of Korea (national)",
+      "population": 52705574,
+      "area_km2": 100459.873,
+      "sewer_population": 50394767,
+      "wwtp_flow_m3_y": 7471262603.55,
+      "sludge_wet_t_y": 4458053.3,
+      "sludge_moisture_pct": 85.2,
+      "sludge_dry_t_y": 659791.8884,
+      "country_code": "KR",
+      "country": "Republic of Korea",
+      "domain_level": "national",
+      "domain_id": "KR-national",
+      "river_flow_m3_s_default": 2029,
+      "data_quality": "official_2024"
+    },
+    "baseYear": 2025,
+    "environment": {
+      "river_flow_m3_s": 100,
+      "soil_area_ha": 1000,
+      "soil_depth_m": 0.2,
+      "soil_bulk_density_kg_m3": 1300,
+      "sediment_area_km2": 1,
+      "sediment_depth_m": 0.05,
+      "sediment_bulk_density_kg_m3": 1300,
+      "air_mixing_height_m": 1000
+    }
+  },
+  "config": {
+    "schema": "K-NanoMFA-dynamic-nanoform-fate-v2.5.0",
+    "enabled": true,
+    "preset": "persistent_oxide",
+    "numerical_solver": "exact_linear",
+    "solver_tolerance": 1e-11,
+    "substeps_per_year": 12,
+    "legacy_refinement_audit": false,
+    "tracking_basis": "selected_material_equivalent",
+    "element_symbol": "",
+    "element_mass_fraction": "",
+    "advection_mode": "hydraulic",
+    "process_model": {
+      "enabled": false,
+      "water_depth_m": "",
+      "viscosity_pa_s": "",
+      "water_density_kg_m3": 1000,
+      "particle_density_kg_m3": "",
+      "free_diameter_nm": "",
+      "small_diameter_nm": "",
+      "large_diameter_nm": "",
+      "attachment_efficiency": "",
+      "collision_kernel_m3_s": "",
+      "background_number_m3": ""
+    },
+    "rate_evidence": {},
+    "evidence_register": [],
+    "calibration_dataset_ids": [],
+    "migration_notes": [],
+    "water_residence_time_days": 30,
+    "large_fraction_of_aggregated_pct": 35,
+    "max_static_years": 1000,
+    "convergence_tolerance": 1e-7,
+    "rates": {
+      "air_matrix_weathering_y": 0.15,
+      "water_matrix_weathering_y": 0.35,
+      "soil_matrix_weathering_y": 0.08,
+      "sediment_matrix_weathering_y": 0.03,
+      "air_free_to_small_y": 1.5,
+      "water_free_to_small_y": 2.2,
+      "soil_free_to_small_y": 0.7,
+      "sediment_free_to_small_y": 0.35,
+      "air_small_to_large_y": 0.35,
+      "water_small_to_large_y": 0.85,
+      "soil_small_to_large_y": 0.25,
+      "sediment_small_to_large_y": 0.18,
+      "air_large_fragmentation_y": 0.08,
+      "water_large_fragmentation_y": 0.12,
+      "soil_large_fragmentation_y": 0.03,
+      "sediment_large_fragmentation_y": 0.02,
+      "air_particulate_dissolution_y": 0,
+      "water_matrix_dissolution_y": 0.015,
+      "water_free_dissolution_y": 0.08,
+      "water_small_dissolution_y": 0.04,
+      "water_large_dissolution_y": 0.015,
+      "soil_particulate_dissolution_y": 0.015,
+      "sediment_particulate_dissolution_y": 0.008,
+      "air_particulate_transformation_y": 0.04,
+      "water_particulate_transformation_y": 0.08,
+      "soil_particulate_transformation_y": 0.12,
+      "sediment_particulate_transformation_y": 0.07,
+      "water_dissolved_reprecipitation_y": 0.03,
+      "soil_dissolved_reprecipitation_y": 0.12,
+      "sediment_dissolved_reprecipitation_y": 0.18,
+      "water_transformed_dissolution_y": 0.01,
+      "soil_transformed_dissolution_y": 0.004,
+      "sediment_transformed_dissolution_y": 0.003,
+      "air_to_water_y": 18,
+      "air_to_soil_y": 45,
+      "water_to_soil_y": 0.015,
+      "soil_runoff_to_water_y": 0.01,
+      "soil_erosion_to_sediment_y": 0.004,
+      "soil_to_air_y": 0.002,
+      "sediment_resuspension_to_water_y": 0.025,
+      "sediment_dissolved_exchange_to_water_y": 0.05,
+      "water_matrix_settling_y": 0.55,
+      "water_free_settling_y": 0.12,
+      "water_small_settling_y": 0.65,
+      "water_large_settling_y": 3.5,
+      "water_transformed_settling_y": 1.1,
+      "water_unresolved_settling_y": 0.35,
+      "air_advective_y": 20,
+      "water_advective_particulate_y": 4,
+      "water_advective_dissolved_y": 12,
+      "soil_irreversible_retention_y": 0.015,
+      "sediment_burial_y": 0.04,
+      "air_non_nano_loss_y": 0,
+      "water_non_nano_loss_y": 0,
+      "soil_non_nano_loss_y": 0,
+      "sediment_non_nano_loss_y": 0
+    },
+    "initial_stock_kg": {
+      "air": 0,
+      "water": 0,
+      "soil": 0,
+      "sediment": 0
+    },
+    "initial_profile_pct": {
+      "matrix_bound": 10,
+      "free_particle": 20,
+      "small_aggregate": 35,
+      "large_aggregate": 20,
+      "dissolved": 5,
+      "transformed_particle": 5,
+      "unresolved": 5
+    },
+    "storm": {
+      "enabled": false,
+      "event_years": "",
+      "soil_to_water_pct": 1.5,
+      "soil_to_sediment_pct": 0.7,
+      "sediment_to_water_pct": 0.5
+    },
+    "external_coupling": {
+      "enabled": true,
+      "mode": "dynamic",
+      "missing_year_policy": "reject",
+      "rows": [
+        {
+          "year": 2025,
+          "compartment": "air",
+          "form": "free_particle",
+          "mass_kg_y": 1,
+          "tracking_basis": "selected_material_equivalent",
+          "material": "AgNP",
+          "domain_id": "KR-national"
+        },
+        {
+          "year": 2025,
+          "compartment": "water",
+          "form": "free_particle",
+          "mass_kg_y": 1,
+          "tracking_basis": "selected_material_equivalent",
+          "material": "AgNP",
+          "domain_id": "KR-national"
+        },
+        {
+          "year": 2025,
+          "compartment": "soil",
+          "form": "free_particle",
+          "mass_kg_y": 1,
+          "tracking_basis": "selected_material_equivalent",
+          "material": "AgNP",
+          "domain_id": "KR-national"
+        },
+        {
+          "year": 2025,
+          "compartment": "sediment",
+          "form": "free_particle",
+          "mass_kg_y": 1,
+          "tracking_basis": "selected_material_equivalent",
+          "material": "AgNP",
+          "domain_id": "KR-national"
+        },
+        {
+          "year": 2026,
+          "compartment": "air",
+          "form": "free_particle",
+          "mass_kg_y": 1,
+          "tracking_basis": "selected_material_equivalent",
+          "material": "AgNP",
+          "domain_id": "KR-national"
+        },
+        {
+          "year": 2026,
+          "compartment": "water",
+          "form": "free_particle",
+          "mass_kg_y": 1,
+          "tracking_basis": "selected_material_equivalent",
+          "material": "AgNP",
+          "domain_id": "KR-national"
+        },
+        {
+          "year": 2026,
+          "compartment": "soil",
+          "form": "free_particle",
+          "mass_kg_y": 1,
+          "tracking_basis": "selected_material_equivalent",
+          "material": "AgNP",
+          "domain_id": "KR-national"
+        },
+        {
+          "year": 2026,
+          "compartment": "sediment",
+          "form": "free_particle",
+          "mass_kg_y": 1,
+          "tracking_basis": "selected_material_equivalent",
+          "material": "AgNP",
+          "domain_id": "KR-national"
+        },
+        {
+          "year": 2027,
+          "compartment": "air",
+          "form": "free_particle",
+          "mass_kg_y": 1,
+          "tracking_basis": "selected_material_equivalent",
+          "material": "AgNP",
+          "domain_id": "KR-national"
+        },
+        {
+          "year": 2027,
+          "compartment": "water",
+          "form": "free_particle",
+          "mass_kg_y": 1,
+          "tracking_basis": "selected_material_equivalent",
+          "material": "AgNP",
+          "domain_id": "KR-national"
+        },
+        {
+          "year": 2027,
+          "compartment": "soil",
+          "form": "free_particle",
+          "mass_kg_y": 1,
+          "tracking_basis": "selected_material_equivalent",
+          "material": "AgNP",
+          "domain_id": "KR-national"
+        },
+        {
+          "year": 2027,
+          "compartment": "sediment",
+          "form": "free_particle",
+          "mass_kg_y": 1,
+          "tracking_basis": "selected_material_equivalent",
+          "material": "AgNP",
+          "domain_id": "KR-national"
+        }
+      ],
+      "source_note": "",
+      "import_report": {
+        "errors": [],
+        "warnings": [],
+        "row_count": 0
+      }
+    },
+    "uncertainty": {
+      "enabled": true,
+      "mode": "linked",
+      "iterations": 100,
+      "seed": 73,
+      "cv": 0.25,
+      "group_correlation": 0.3,
+      "within_group_correlation": 0.5,
+      "input_cv": 0.25,
+      "environment_cv": 0.2,
+      "form_cv": 0.2
+    },
+    "evidence_class": "E",
+    "source_note": "Screening kinetic parameters; replace with nanoform-, medium-, pathway-, and region-specific evidence.",
+    "limitations": "Linear first-order, spatially aggregated state-transition model. It does not resolve full particle-size distributions, geochemistry, watershed hydraulics, or local concentration gradients."
+  },
+  "repeatability": {
+    "kind": "Monte Carlo repeatability diagnostic",
+    "counts": [
+      500,
+      1000,
+      2000,
+      5000
+    ],
+    "seeds": [
+      73,
+      173,
+      273
+    ],
+    "threshold": 0.1,
+    "runs": [
+      {
+        "seed": 73,
+        "iterations": 500,
+        "seconds": 4.83,
+        "summary": {
+          "air": {
+            "P5": 0.00006329374986832072,
+            "P50": 0.0001230308238416921,
+            "P95": 0.00021623060893572512
+          },
+          "water": {
+            "P5": 0.0002486327366129497,
+            "P50": 0.0004097796698807901,
+            "P95": 0.0006593417391013015
+          },
+          "soil": {
+            "P5": 0.9319220208265001,
+            "P50": 1.752580754941924,
+            "P95": 3.954017151218065
+          },
+          "sediment": {
+            "P5": 20.688614861548537,
+            "P50": 45.39339537766148,
+            "P95": 90.9433600261107
+          },
+          "stock": {
+            "P5": 4.932968291563202,
+            "P50": 7.248304938405397,
+            "P95": 10.632829178455127
+          },
+          "dissolved_share": {
+            "P5": 1.0170188739895638,
+            "P50": 1.4440725858857486,
+            "P95": 1.925658696416617
+          },
+          "large_aggregate_share": {
+            "P5": 4.87966830969267,
+            "P50": 8.073861989255281,
+            "P95": 12.199338640361562
+          },
+          "closure": {
+            "P5": 99.99999999999996,
+            "P50": 100,
+            "P95": 100.00000000000004
+          }
+        },
+        "half_to_full": {
+          "air": {
+            "P5": 0.015347787500789885,
+            "P50": 0.00933881071918954,
+            "P95": 0.016675543578671247
+          },
+          "water": {
+            "P5": 0.009442626813975223,
+            "P50": 0.02053092392823691,
+            "P95": 0.041605561703711894
+          },
+          "soil": {
+            "P5": 0.04192095210534557,
+            "P50": 0.027423835242265663,
+            "P95": 0.02911030684652117
+          },
+          "sediment": {
+            "P5": 0.008938655269532067,
+            "P50": 0.009879162970954898,
+            "P95": 0.09526445175508594
+          }
+        }
+      },
+      {
+        "seed": 73,
+        "iterations": 1000,
+        "seconds": 7.808,
+        "summary": {
+          "air": {
+            "P5": 0.00006431828880838949,
+            "P50": 0.0001234494562284255,
+            "P95": 0.00021682603408889703
+          },
+          "water": {
+            "P5": 0.0002487421086213493,
+            "P50": 0.0004066508162988811,
+            "P95": 0.0006831139443634333
+          },
+          "soil": {
+            "P5": 0.9227703291104081,
+            "P50": 1.803757583995517,
+            "P95": 3.686359376889187
+          },
+          "sediment": {
+            "P5": 22.264849962645684,
+            "P50": 45.40313681593335,
+            "P95": 93.3317307857527
+          },
+          "stock": {
+            "P5": 4.952077603100728,
+            "P50": 7.265222203503898,
+            "P95": 10.599558583026273
+          },
+          "dissolved_share": {
+            "P5": 1.0220180738222888,
+            "P50": 1.4416319922226168,
+            "P95": 1.959801753533317
+          },
+          "large_aggregate_share": {
+            "P5": 4.816207152876022,
+            "P50": 7.904902643270708,
+            "P95": 12.533998578449328
+          },
+          "closure": {
+            "P5": 99.99999999999996,
+            "P50": 100,
+            "P95": 100.00000000000004
+          }
+        },
+        "half_to_full": {
+          "air": {
+            "P5": 0.015929200839297393,
+            "P50": 0.0033911237807220094,
+            "P95": 0.002746096222595615
+          },
+          "water": {
+            "P5": 0.00043970041504348223,
+            "P50": 0.007694202142236356,
+            "P95": 0.0347997657759486
+          },
+          "soil": {
+            "P5": 0.00991762676733941,
+            "P50": 0.028372343106234398,
+            "P95": 0.07260761823898648
+          },
+          "sediment": {
+            "P5": 0.07079477758626883,
+            "P50": 0.00021455430076045614,
+            "P95": 0.025590126096821417
+          }
+        }
+      },
+      {
+        "seed": 73,
+        "iterations": 2000,
+        "seconds": 17.467,
+        "summary": {
+          "air": {
+            "P5": 0.00006312742671054999,
+            "P50": 0.0001230308238416921,
+            "P95": 0.0002242915391703756
+          },
+          "water": {
+            "P5": 0.00024006881697541724,
+            "P50": 0.00040478497265342,
+            "P95": 0.0006811190886594714
+          },
+          "soil": {
+            "P5": 0.8586134230899117,
+            "P50": 1.7553590056045767,
+            "P95": 3.5705057179166753
+          },
+          "sediment": {
+            "P5": 21.879972473375503,
+            "P50": 44.738784066690506,
+            "P95": 90.86947759155169
+          },
+          "stock": {
+            "P5": 4.823352414413604,
+            "P50": 7.239560529349669,
+            "P95": 10.703589027703782
+          },
+          "dissolved_share": {
+            "P5": 1.035537726549645,
+            "P50": 1.4441290991940554,
+            "P95": 1.9927474480039706
+          },
+          "large_aggregate_share": {
+            "P5": 4.787108958902763,
+            "P50": 7.815547394664553,
+            "P95": 12.5218259200435
+          },
+          "closure": {
+            "P5": 99.99999999999996,
+            "P50": 100,
+            "P95": 100.00000000000004
+          }
+        },
+        "half_to_full": {
+          "air": {
+            "P5": 0.018864416940354827,
+            "P50": 0.003402662630887386,
+            "P95": 0.03328482701172092
+          },
+          "water": {
+            "P5": 0.036128355840651334,
+            "P50": 0.004609468659941189,
+            "P95": 0.002928791362884998
+          },
+          "soil": {
+            "P5": 0.07472152693538552,
+            "P50": 0.027571897393303367,
+            "P95": 0.0324474088897721
+          },
+          "sediment": {
+            "P5": 0.017590400981469093,
+            "P50": 0.014849593324944142,
+            "P95": 0.027096592381311672
+          }
+        }
+      },
+      {
+        "seed": 73,
+        "iterations": 5000,
+        "seconds": 34.385,
+        "summary": {
+          "air": {
+            "P5": 0.00006431828880838949,
+            "P50": 0.00012226450429076672,
+            "P95": 0.0002257158899286334
+          },
+          "water": {
+            "P5": 0.0002408361538972408,
+            "P50": 0.00040630824430530176,
+            "P95": 0.0006793350978083588
+          },
+          "soil": {
+            "P5": 0.8774325681276137,
+            "P50": 1.773623571094495,
+            "P95": 3.629455239083433
+          },
+          "sediment": {
+            "P5": 21.846006361690275,
+            "P50": 44.330070387171716,
+            "P95": 88.85748414269504
+          },
+          "stock": {
+            "P5": 4.7964638337635925,
+            "P50": 7.223952325754998,
+            "P95": 10.79884234246813
+          },
+          "dissolved_share": {
+            "P5": 1.0289905928489769,
+            "P50": 1.4374155472144792,
+            "P95": 1.9617871130662088
+          },
+          "large_aggregate_share": {
+            "P5": 4.7769527092774196,
+            "P50": 7.866876594073036,
+            "P95": 12.32416666325192
+          },
+          "closure": {
+            "P5": 99.99999999999996,
+            "P50": 100,
+            "P95": 100.00000000000004
+          }
+        },
+        "half_to_full": {
+          "air": {
+            "P5": 0.01825013116381557,
+            "P50": 0.00008623832789721732,
+            "P95": 0.008117114367866513
+          },
+          "water": {
+            "P5": 0.0031861367548286644,
+            "P50": 0.0068571782152755745,
+            "P95": 0.002938423890992685
+          },
+          "soil": {
+            "P5": 0.030678016190739166,
+            "P50": 0.006726052635770348,
+            "P95": 0.006059383397909875
+          },
+          "sediment": {
+            "P5": 0.006009910973000829,
+            "P50": 0.007254442860087099,
+            "P95": 0.023470338327954945
+          }
+        }
+      },
+      {
+        "seed": 173,
+        "iterations": 500,
+        "seconds": 3.354,
+        "summary": {
+          "air": {
+            "P5": 0.00006884147810180154,
+            "P50": 0.00012755078526309807,
+            "P95": 0.0002247828285631535
+          },
+          "water": {
+            "P5": 0.00024731237875737244,
+            "P50": 0.00040538501222639115,
+            "P95": 0.0006787745319085213
+          },
+          "soil": {
+            "P5": 0.8994201130219983,
+            "P50": 1.7782330337887098,
+            "P95": 3.465166676193147
+          },
+          "sediment": {
+            "P5": 21.93255895943701,
+            "P50": 43.7318526379693,
+            "P95": 84.37617016316933
+          },
+          "stock": {
+            "P5": 4.734886806694742,
+            "P50": 7.288384345203313,
+            "P95": 10.722608799742012
+          },
+          "dissolved_share": {
+            "P5": 1.0427271653075034,
+            "P50": 1.3825763759323957,
+            "P95": 1.9272654130145734
+          },
+          "large_aggregate_share": {
+            "P5": 5.066115413713929,
+            "P50": 7.956114475173923,
+            "P95": 12.038587575507103
+          },
+          "closure": {
+            "P5": 99.99999999999996,
+            "P50": 100,
+            "P95": 100.00000000000004
+          }
+        },
+        "half_to_full": {
+          "air": {
+            "P5": 0.03867768891997388,
+            "P50": 0.0027750724571992233,
+            "P95": 0.003469387210359714
+          },
+          "water": {
+            "P5": 0.027606179717692473,
+            "P50": 0.004506788570287074,
+            "P95": 0.030114148986313535
+          },
+          "soil": {
+            "P5": 0.04800620787010774,
+            "P50": 0.02346666994357528,
+            "P95": 0.03236469963920342
+          },
+          "sediment": {
+            "P5": 0.08086607483391751,
+            "P50": 0.002411027093808374,
+            "P95": 0.08769150456325682
+          }
+        }
+      },
+      {
+        "seed": 173,
+        "iterations": 1000,
+        "seconds": 7.099,
+        "summary": {
+          "air": {
+            "P5": 0.00006894269150668293,
+            "P50": 0.00012705561368948394,
+            "P95": 0.00022469414527899866
+          },
+          "water": {
+            "P5": 0.00024350914853357166,
+            "P50": 0.00041135954728402195,
+            "P95": 0.0006622734264704504
+          },
+          "soil": {
+            "P5": 0.86074550142848,
+            "P50": 1.7783293966873375,
+            "P95": 3.48992126858688
+          },
+          "sediment": {
+            "P5": 22.21291517053006,
+            "P50": 43.970870851338084,
+            "P95": 88.19890033365503
+          },
+          "stock": {
+            "P5": 4.781483360842311,
+            "P50": 7.28685239222611,
+            "P95": 10.625260637200348
+          },
+          "dissolved_share": {
+            "P5": 1.0302260086090127,
+            "P50": 1.3962317160770825,
+            "P95": 1.9504052721869918
+          },
+          "large_aggregate_share": {
+            "P5": 4.876949868157194,
+            "P50": 7.808308112756432,
+            "P95": 12.259717018369383
+          },
+          "closure": {
+            "P5": 99.99999999999996,
+            "P50": 100,
+            "P95": 100.00000000000004
+          }
+        },
+        "half_to_full": {
+          "air": {
+            "P5": 0.0014680802659347745,
+            "P50": 0.003897282136815339,
+            "P95": 0.00039468444558147815
+          },
+          "water": {
+            "P5": 0.015618428493155518,
+            "P50": 0.014523876003552934,
+            "P95": 0.024915850128567868
+          },
+          "soil": {
+            "P5": 0.044931529156219195,
+            "P50": 0.000054187316931943574,
+            "P95": 0.0070931664323064785
+          },
+          "sediment": {
+            "P5": 0.012621315524807811,
+            "P50": 0.005435830783904378,
+            "P95": 0.04334215229469269
+          }
+        }
+      },
+      {
+        "seed": 173,
+        "iterations": 2000,
+        "seconds": 14.257,
+        "summary": {
+          "air": {
+            "P5": 0.00006583652112016015,
+            "P50": 0.00012519341737979273,
+            "P95": 0.00022258755662495094
+          },
+          "water": {
+            "P5": 0.000245224184247984,
+            "P50": 0.0004062370024752255,
+            "P95": 0.0006725562886465479
+          },
+          "soil": {
+            "P5": 0.8732631648971918,
+            "P50": 1.7783868536169587,
+            "P95": 3.4885707553811893
+          },
+          "sediment": {
+            "P5": 22.785969977358075,
+            "P50": 43.814831764691945,
+            "P95": 86.38033186504161
+          },
+          "stock": {
+            "P5": 4.780195120429564,
+            "P50": 7.219528037497307,
+            "P95": 10.722608799742012
+          },
+          "dissolved_share": {
+            "P5": 1.0329896505822584,
+            "P50": 1.4126231878350777,
+            "P95": 1.9673226876556296
+          },
+          "large_aggregate_share": {
+            "P5": 4.784864762524859,
+            "P50": 7.775808707383793,
+            "P95": 12.259717018369383
+          },
+          "closure": {
+            "P5": 99.99999999999996,
+            "P50": 100,
+            "P95": 100.00000000000004
+          }
+        },
+        "half_to_full": {
+          "air": {
+            "P5": 0.04718005042905625,
+            "P50": 0.014874554498675882,
+            "P95": 0.009464089933819683
+          },
+          "water": {
+            "P5": 0.006993746231317869,
+            "P50": 0.012609744502801355,
+            "P95": 0.015289221660228162
+          },
+          "soil": {
+            "P5": 0.014334354146479357,
+            "P50": 0.00003230845386894661,
+            "P95": 0.000387125072239857
+          },
+          "sediment": {
+            "P5": 0.0251494585219522,
+            "P50": 0.003561330270173093,
+            "P95": 0.021053038687727028
+          }
+        }
+      },
+      {
+        "seed": 173,
+        "iterations": 5000,
+        "seconds": 37.399,
+        "summary": {
+          "air": {
+            "P5": 0.0000657320228692016,
+            "P50": 0.00012443727930208155,
+            "P95": 0.00022481469438736295
+          },
+          "water": {
+            "P5": 0.00023962894915733577,
+            "P50": 0.0004056310059967427,
+            "P95": 0.0006862664335808622
+          },
+          "soil": {
+            "P5": 0.8905780933162076,
+            "P50": 1.791395108633243,
+            "P95": 3.535292459888311
+          },
+          "sediment": {
+            "P5": 22.470692134065892,
+            "P50": 44.43230451372715,
+            "P95": 89.22199838992766
+          },
+          "stock": {
+            "P5": 4.794283514813137,
+            "P50": 7.225488979147803,
+            "P95": 10.853064025039261
+          },
+          "dissolved_share": {
+            "P5": 1.0372793991173703,
+            "P50": 1.4205565239684161,
+            "P95": 1.977743227402216
+          },
+          "large_aggregate_share": {
+            "P5": 4.7540867013600225,
+            "P50": 7.804006343432423,
+            "P95": 12.285891459814957
+          },
+          "closure": {
+            "P5": 99.99999999999996,
+            "P50": 100,
+            "P95": 100.00000000000004
+          }
+        },
+        "half_to_full": {
+          "air": {
+            "P5": 0.010528504973654476,
+            "P50": 0.008907158290179443,
+            "P95": 0.0036800148139093714
+          },
+          "water": {
+            "P5": 0.02597062484349356,
+            "P50": 0.0005489713857774792,
+            "P95": 0.004989916612749618
+          },
+          "soil": {
+            "P5": 0.022043885258009568,
+            "P50": 0.0019368172692242876,
+            "P95": 0.005308262680646385
+          },
+          "sediment": {
+            "P5": 0.008419134232049617,
+            "P50": 0.005163056599266795,
+            "P95": 0.01764385693840474
+          }
+        }
+      },
+      {
+        "seed": 273,
+        "iterations": 500,
+        "seconds": 4.774,
+        "summary": {
+          "air": {
+            "P5": 0.0000690687550508781,
+            "P50": 0.0001234275944973467,
+            "P95": 0.00022201598300342112
+          },
+          "water": {
+            "P5": 0.0002404661882970963,
+            "P50": 0.00041192619408364885,
+            "P95": 0.000695834058600399
+          },
+          "soil": {
+            "P5": 0.8912945851199425,
+            "P50": 1.872269617814596,
+            "P95": 3.657354098103912
+          },
+          "sediment": {
+            "P5": 22.45783567098546,
+            "P50": 43.382515679946856,
+            "P95": 93.37935261657226
+          },
+          "stock": {
+            "P5": 4.865960852070733,
+            "P50": 7.3171036284438,
+            "P95": 10.82073320180017
+          },
+          "dissolved_share": {
+            "P5": 1.0036046047143845,
+            "P50": 1.416693890636663,
+            "P95": 1.94140890820846
+          },
+          "large_aggregate_share": {
+            "P5": 4.829036292158492,
+            "P50": 7.805376016095434,
+            "P95": 12.069414982577241
+          },
+          "closure": {
+            "P5": 99.99999999999996,
+            "P50": 100,
+            "P95": 100.00000000000004
+          }
+        },
+        "half_to_full": {
+          "air": {
+            "P5": 0.03858910462685401,
+            "P50": 0.031592849296163066,
+            "P95": 0.004591711942313941
+          },
+          "water": {
+            "P5": 0.008542532019966216,
+            "P50": 0.019536027995886485,
+            "P95": 0.015416933020631612
+          },
+          "soil": {
+            "P5": 0.03159799701987868,
+            "P50": 0.012054531602080016,
+            "P95": 0.020501754159717323
+          },
+          "sediment": {
+            "P5": 0.014856852760589845,
+            "P50": 0.03257706236297737,
+            "P95": 0.008327666697289838
+          }
+        }
+      },
+      {
+        "seed": 273,
+        "iterations": 1000,
+        "seconds": 7.919,
+        "summary": {
+          "air": {
+            "P5": 0.00006889071992659199,
+            "P50": 0.00012466228240540136,
+            "P95": 0.0002201137249792536
+          },
+          "water": {
+            "P5": 0.00024487222739519727,
+            "P50": 0.0004093104222043875,
+            "P95": 0.0006913559712540256
+          },
+          "soil": {
+            "P5": 0.8698548102053333,
+            "P50": 1.8344263738686664,
+            "P95": 3.6587594348257313
+          },
+          "sediment": {
+            "P5": 22.99674433843803,
+            "P50": 43.8832370010037,
+            "P95": 90.4511061586151
+          },
+          "stock": {
+            "P5": 4.867763350778168,
+            "P50": 7.2829516147750875,
+            "P95": 10.819162346076661
+          },
+          "dissolved_share": {
+            "P5": 1.018047585551915,
+            "P50": 1.4317670674264593,
+            "P95": 1.9569516477650257
+          },
+          "large_aggregate_share": {
+            "P5": 4.800631164712542,
+            "P50": 7.837885485595102,
+            "P95": 12.188576651948024
+          },
+          "closure": {
+            "P5": 99.99999999999996,
+            "P50": 100,
+            "P95": 100.00000000000004
+          }
+        },
+        "half_to_full": {
+          "air": {
+            "P5": 0.002584312146481011,
+            "P50": 0.009904262012783072,
+            "P95": 0.0086421599759252
+          },
+          "water": {
+            "P5": 0.017993216890987363,
+            "P50": 0.006390679878547419,
+            "P95": 0.006477252721562236
+          },
+          "soil": {
+            "P5": 0.024647532741180433,
+            "P50": 0.02062947005396636,
+            "P95": 0.00038410197413986407
+          },
+          "sediment": {
+            "P5": 0.023434128741076143,
+            "P50": 0.011410309614247263,
+            "P95": 0.03237380483575495
+          }
+        }
+      },
+      {
+        "seed": 273,
+        "iterations": 2000,
+        "seconds": 13.636,
+        "summary": {
+          "air": {
+            "P5": 0.00006697213508407452,
+            "P50": 0.0001221037845889503,
+            "P95": 0.00022569776688325757
+          },
+          "water": {
+            "P5": 0.0002404661882970963,
+            "P50": 0.0004054420390579488,
+            "P95": 0.0006947067834497946
+          },
+          "soil": {
+            "P5": 0.8643166843758519,
+            "P50": 1.8090263678709164,
+            "P95": 3.5951717880802527
+          },
+          "sediment": {
+            "P5": 22.106315233689102,
+            "P50": 43.889839525025494,
+            "P95": 90.1371552309202
+          },
+          "stock": {
+            "P5": 4.799798933248628,
+            "P50": 7.235732712855143,
+            "P95": 10.767873176374216
+          },
+          "dissolved_share": {
+            "P5": 1.0334338224096713,
+            "P50": 1.434045217459281,
+            "P95": 1.954375518607745
+          },
+          "large_aggregate_share": {
+            "P5": 4.8646677947553645,
+            "P50": 7.8526453787380195,
+            "P95": 12.376919190897764
+          },
+          "closure": {
+            "P5": 99.99999999999996,
+            "P50": 100,
+            "P95": 100.00000000000004
+          }
+        },
+        "half_to_full": {
+          "air": {
+            "P5": 0.02864750899921196,
+            "P50": 0.020953468601026426,
+            "P95": 0.024741236836837294
+          },
+          "water": {
+            "P5": 0.018322904892796383,
+            "P50": 0.009541149594223015,
+            "P95": 0.004823347454777208
+          },
+          "soil": {
+            "P5": 0.006407519291937161,
+            "P50": 0.014040705237283952,
+            "P95": 0.017686956422027625
+          },
+          "sediment": {
+            "P5": 0.04027939958948708,
+            "P50": 0.00015043399778277315,
+            "P95": 0.003483035679244601
+          }
+        }
+      },
+      {
+        "seed": 273,
+        "iterations": 5000,
+        "seconds": 38.87,
+        "summary": {
+          "air": {
+            "P5": 0.00006724967643035882,
+            "P50": 0.00012170344928017887,
+            "P95": 0.00022682949771973788
+          },
+          "water": {
+            "P5": 0.00024012709186908618,
+            "P50": 0.00040717365037046716,
+            "P95": 0.0006947067834497946
+          },
+          "soil": {
+            "P5": 0.8701503051566882,
+            "P50": 1.778634640183615,
+            "P95": 3.580418597294052
+          },
+          "sediment": {
+            "P5": 21.957637506799497,
+            "P50": 43.88431771871072,
+            "P95": 88.598639404668
+          },
+          "stock": {
+            "P5": 4.79263166246563,
+            "P50": 7.226843171414781,
+            "P95": 10.925087097667154
+          },
+          "dissolved_share": {
+            "P5": 1.0252288310037998,
+            "P50": 1.4348386721545054,
+            "P95": 1.9727522581662253
+          },
+          "large_aggregate_share": {
+            "P5": 4.86575242344592,
+            "P50": 7.913382116575557,
+            "P95": 12.53489098079415
+          },
+          "closure": {
+            "P5": 99.99999999999996,
+            "P50": 100,
+            "P95": 100.00000000000004
+          }
+        },
+        "half_to_full": {
+          "air": {
+            "P5": 0.005258947978414888,
+            "P50": 0.003405685765670955,
+            "P95": 0.00844724094484191
+          },
+          "water": {
+            "P5": 0.0014121539780067947,
+            "P50": 0.0015472905147814846,
+            "P95": 0.0036833455171653064
+          },
+          "soil": {
+            "P5": 0.013436400419568215,
+            "P50": 0.009130828922183615,
+            "P95": 0.0018008174653222357
+          },
+          "sediment": {
+            "P5": 0.005142316167319226,
+            "P50": 0.009960618392989427,
+            "P95": 0.0022466458249402054
+          }
+        }
+      }
+    ],
+    "checks": [
+      {
+        "kind": "count",
+        "seed": 73,
+        "medium": "air",
+        "quantile": "P5",
+        "from": 500,
+        "to": 1000,
+        "relative_change": 0.015929200839297393
+      },
+      {
+        "kind": "count",
+        "seed": 73,
+        "medium": "air",
+        "quantile": "P50",
+        "from": 500,
+        "to": 1000,
+        "relative_change": 0.0033911237807220094
+      },
+      {
+        "kind": "count",
+        "seed": 73,
+        "medium": "air",
+        "quantile": "P95",
+        "from": 500,
+        "to": 1000,
+        "relative_change": 0.002746096222595615
+      },
+      {
+        "kind": "count",
+        "seed": 73,
+        "medium": "water",
+        "quantile": "P5",
+        "from": 500,
+        "to": 1000,
+        "relative_change": 0.00043970041504348223
+      },
+      {
+        "kind": "count",
+        "seed": 73,
+        "medium": "water",
+        "quantile": "P50",
+        "from": 500,
+        "to": 1000,
+        "relative_change": 0.007694202142236356
+      },
+      {
+        "kind": "count",
+        "seed": 73,
+        "medium": "water",
+        "quantile": "P95",
+        "from": 500,
+        "to": 1000,
+        "relative_change": 0.0347997657759486
+      },
+      {
+        "kind": "count",
+        "seed": 73,
+        "medium": "soil",
+        "quantile": "P5",
+        "from": 500,
+        "to": 1000,
+        "relative_change": 0.00991762676733941
+      },
+      {
+        "kind": "count",
+        "seed": 73,
+        "medium": "soil",
+        "quantile": "P50",
+        "from": 500,
+        "to": 1000,
+        "relative_change": 0.028372343106234398
+      },
+      {
+        "kind": "count",
+        "seed": 73,
+        "medium": "soil",
+        "quantile": "P95",
+        "from": 500,
+        "to": 1000,
+        "relative_change": 0.07260761823898648
+      },
+      {
+        "kind": "count",
+        "seed": 73,
+        "medium": "sediment",
+        "quantile": "P5",
+        "from": 500,
+        "to": 1000,
+        "relative_change": 0.07079477758626883
+      },
+      {
+        "kind": "count",
+        "seed": 73,
+        "medium": "sediment",
+        "quantile": "P50",
+        "from": 500,
+        "to": 1000,
+        "relative_change": 0.00021455430076045614
+      },
+      {
+        "kind": "count",
+        "seed": 73,
+        "medium": "sediment",
+        "quantile": "P95",
+        "from": 500,
+        "to": 1000,
+        "relative_change": 0.025590126096821417
+      },
+      {
+        "kind": "count",
+        "seed": 73,
+        "medium": "air",
+        "quantile": "P5",
+        "from": 1000,
+        "to": 2000,
+        "relative_change": 0.018864416940354827
+      },
+      {
+        "kind": "count",
+        "seed": 73,
+        "medium": "air",
+        "quantile": "P50",
+        "from": 1000,
+        "to": 2000,
+        "relative_change": 0.003402662630887386
+      },
+      {
+        "kind": "count",
+        "seed": 73,
+        "medium": "air",
+        "quantile": "P95",
+        "from": 1000,
+        "to": 2000,
+        "relative_change": 0.03328482701172092
+      },
+      {
+        "kind": "count",
+        "seed": 73,
+        "medium": "water",
+        "quantile": "P5",
+        "from": 1000,
+        "to": 2000,
+        "relative_change": 0.036128355840651334
+      },
+      {
+        "kind": "count",
+        "seed": 73,
+        "medium": "water",
+        "quantile": "P50",
+        "from": 1000,
+        "to": 2000,
+        "relative_change": 0.004609468659941189
+      },
+      {
+        "kind": "count",
+        "seed": 73,
+        "medium": "water",
+        "quantile": "P95",
+        "from": 1000,
+        "to": 2000,
+        "relative_change": 0.002928791362884998
+      },
+      {
+        "kind": "count",
+        "seed": 73,
+        "medium": "soil",
+        "quantile": "P5",
+        "from": 1000,
+        "to": 2000,
+        "relative_change": 0.07472152693538552
+      },
+      {
+        "kind": "count",
+        "seed": 73,
+        "medium": "soil",
+        "quantile": "P50",
+        "from": 1000,
+        "to": 2000,
+        "relative_change": 0.027571897393303367
+      },
+      {
+        "kind": "count",
+        "seed": 73,
+        "medium": "soil",
+        "quantile": "P95",
+        "from": 1000,
+        "to": 2000,
+        "relative_change": 0.0324474088897721
+      },
+      {
+        "kind": "count",
+        "seed": 73,
+        "medium": "sediment",
+        "quantile": "P5",
+        "from": 1000,
+        "to": 2000,
+        "relative_change": 0.017590400981469093
+      },
+      {
+        "kind": "count",
+        "seed": 73,
+        "medium": "sediment",
+        "quantile": "P50",
+        "from": 1000,
+        "to": 2000,
+        "relative_change": 0.014849593324944142
+      },
+      {
+        "kind": "count",
+        "seed": 73,
+        "medium": "sediment",
+        "quantile": "P95",
+        "from": 1000,
+        "to": 2000,
+        "relative_change": 0.027096592381311672
+      },
+      {
+        "kind": "count",
+        "seed": 73,
+        "medium": "air",
+        "quantile": "P5",
+        "from": 2000,
+        "to": 5000,
+        "relative_change": 0.018515139626727357
+      },
+      {
+        "kind": "count",
+        "seed": 73,
+        "medium": "air",
+        "quantile": "P50",
+        "from": 2000,
+        "to": 5000,
+        "relative_change": 0.0062677189538423595
+      },
+      {
+        "kind": "count",
+        "seed": 73,
+        "medium": "air",
+        "quantile": "P95",
+        "from": 2000,
+        "to": 5000,
+        "relative_change": 0.006310369902217051
+      },
+      {
+        "kind": "count",
+        "seed": 73,
+        "medium": "water",
+        "quantile": "P5",
+        "from": 2000,
+        "to": 5000,
+        "relative_change": 0.0031861367548286644
+      },
+      {
+        "kind": "count",
+        "seed": 73,
+        "medium": "water",
+        "quantile": "P50",
+        "from": 2000,
+        "to": 5000,
+        "relative_change": 0.0037490542543291046
+      },
+      {
+        "kind": "count",
+        "seed": 73,
+        "medium": "water",
+        "quantile": "P95",
+        "from": 2000,
+        "to": 5000,
+        "relative_change": 0.002626083735211027
+      },
+      {
+        "kind": "count",
+        "seed": 73,
+        "medium": "soil",
+        "quantile": "P5",
+        "from": 2000,
+        "to": 5000,
+        "relative_change": 0.021447967309739677
+      },
+      {
+        "kind": "count",
+        "seed": 73,
+        "medium": "soil",
+        "quantile": "P50",
+        "from": 2000,
+        "to": 5000,
+        "relative_change": 0.010297881572834141
+      },
+      {
+        "kind": "count",
+        "seed": 73,
+        "medium": "soil",
+        "quantile": "P95",
+        "from": 2000,
+        "to": 5000,
+        "relative_change": 0.016241974975187944
+      },
+      {
+        "kind": "count",
+        "seed": 73,
+        "medium": "sediment",
+        "quantile": "P5",
+        "from": 2000,
+        "to": 5000,
+        "relative_change": 0.0015547972990061713
+      },
+      {
+        "kind": "count",
+        "seed": 73,
+        "medium": "sediment",
+        "quantile": "P50",
+        "from": 2000,
+        "to": 5000,
+        "relative_change": 0.009219784131835357
+      },
+      {
+        "kind": "count",
+        "seed": 73,
+        "medium": "sediment",
+        "quantile": "P95",
+        "from": 2000,
+        "to": 5000,
+        "relative_change": 0.022642926122301746
+      },
+      {
+        "kind": "count",
+        "seed": 173,
+        "medium": "air",
+        "quantile": "P5",
+        "from": 500,
+        "to": 1000,
+        "relative_change": 0.0014680802659347745
+      },
+      {
+        "kind": "count",
+        "seed": 173,
+        "medium": "air",
+        "quantile": "P50",
+        "from": 500,
+        "to": 1000,
+        "relative_change": 0.003897282136815339
+      },
+      {
+        "kind": "count",
+        "seed": 173,
+        "medium": "air",
+        "quantile": "P95",
+        "from": 500,
+        "to": 1000,
+        "relative_change": 0.00039468444558147815
+      },
+      {
+        "kind": "count",
+        "seed": 173,
+        "medium": "water",
+        "quantile": "P5",
+        "from": 500,
+        "to": 1000,
+        "relative_change": 0.015618428493155518
+      },
+      {
+        "kind": "count",
+        "seed": 173,
+        "medium": "water",
+        "quantile": "P50",
+        "from": 500,
+        "to": 1000,
+        "relative_change": 0.014523876003552934
+      },
+      {
+        "kind": "count",
+        "seed": 173,
+        "medium": "water",
+        "quantile": "P95",
+        "from": 500,
+        "to": 1000,
+        "relative_change": 0.024915850128567868
+      },
+      {
+        "kind": "count",
+        "seed": 173,
+        "medium": "soil",
+        "quantile": "P5",
+        "from": 500,
+        "to": 1000,
+        "relative_change": 0.044931529156219195
+      },
+      {
+        "kind": "count",
+        "seed": 173,
+        "medium": "soil",
+        "quantile": "P50",
+        "from": 500,
+        "to": 1000,
+        "relative_change": 0.000054187316931943574
+      },
+      {
+        "kind": "count",
+        "seed": 173,
+        "medium": "soil",
+        "quantile": "P95",
+        "from": 500,
+        "to": 1000,
+        "relative_change": 0.0070931664323064785
+      },
+      {
+        "kind": "count",
+        "seed": 173,
+        "medium": "sediment",
+        "quantile": "P5",
+        "from": 500,
+        "to": 1000,
+        "relative_change": 0.012621315524807811
+      },
+      {
+        "kind": "count",
+        "seed": 173,
+        "medium": "sediment",
+        "quantile": "P50",
+        "from": 500,
+        "to": 1000,
+        "relative_change": 0.005435830783904378
+      },
+      {
+        "kind": "count",
+        "seed": 173,
+        "medium": "sediment",
+        "quantile": "P95",
+        "from": 500,
+        "to": 1000,
+        "relative_change": 0.04334215229469269
+      },
+      {
+        "kind": "count",
+        "seed": 173,
+        "medium": "air",
+        "quantile": "P5",
+        "from": 1000,
+        "to": 2000,
+        "relative_change": 0.04718005042905625
+      },
+      {
+        "kind": "count",
+        "seed": 173,
+        "medium": "air",
+        "quantile": "P50",
+        "from": 1000,
+        "to": 2000,
+        "relative_change": 0.014874554498675882
+      },
+      {
+        "kind": "count",
+        "seed": 173,
+        "medium": "air",
+        "quantile": "P95",
+        "from": 1000,
+        "to": 2000,
+        "relative_change": 0.009464089933819683
+      },
+      {
+        "kind": "count",
+        "seed": 173,
+        "medium": "water",
+        "quantile": "P5",
+        "from": 1000,
+        "to": 2000,
+        "relative_change": 0.006993746231317869
+      },
+      {
+        "kind": "count",
+        "seed": 173,
+        "medium": "water",
+        "quantile": "P50",
+        "from": 1000,
+        "to": 2000,
+        "relative_change": 0.012609744502801355
+      },
+      {
+        "kind": "count",
+        "seed": 173,
+        "medium": "water",
+        "quantile": "P95",
+        "from": 1000,
+        "to": 2000,
+        "relative_change": 0.015289221660228162
+      },
+      {
+        "kind": "count",
+        "seed": 173,
+        "medium": "soil",
+        "quantile": "P5",
+        "from": 1000,
+        "to": 2000,
+        "relative_change": 0.014334354146479357
+      },
+      {
+        "kind": "count",
+        "seed": 173,
+        "medium": "soil",
+        "quantile": "P50",
+        "from": 1000,
+        "to": 2000,
+        "relative_change": 0.00003230845386894661
+      },
+      {
+        "kind": "count",
+        "seed": 173,
+        "medium": "soil",
+        "quantile": "P95",
+        "from": 1000,
+        "to": 2000,
+        "relative_change": 0.000387125072239857
+      },
+      {
+        "kind": "count",
+        "seed": 173,
+        "medium": "sediment",
+        "quantile": "P5",
+        "from": 1000,
+        "to": 2000,
+        "relative_change": 0.0251494585219522
+      },
+      {
+        "kind": "count",
+        "seed": 173,
+        "medium": "sediment",
+        "quantile": "P50",
+        "from": 1000,
+        "to": 2000,
+        "relative_change": 0.003561330270173093
+      },
+      {
+        "kind": "count",
+        "seed": 173,
+        "medium": "sediment",
+        "quantile": "P95",
+        "from": 1000,
+        "to": 2000,
+        "relative_change": 0.021053038687727028
+      },
+      {
+        "kind": "count",
+        "seed": 173,
+        "medium": "air",
+        "quantile": "P5",
+        "from": 2000,
+        "to": 5000,
+        "relative_change": 0.0015897616777517092
+      },
+      {
+        "kind": "count",
+        "seed": 173,
+        "medium": "air",
+        "quantile": "P50",
+        "from": 2000,
+        "to": 5000,
+        "relative_change": 0.006076459417564108
+      },
+      {
+        "kind": "count",
+        "seed": 173,
+        "medium": "air",
+        "quantile": "P95",
+        "from": 2000,
+        "to": 5000,
+        "relative_change": 0.00990654889566329
+      },
+      {
+        "kind": "count",
+        "seed": 173,
+        "medium": "water",
+        "quantile": "P5",
+        "from": 2000,
+        "to": 5000,
+        "relative_change": 0.023349579048458406
+      },
+      {
+        "kind": "count",
+        "seed": 173,
+        "medium": "water",
+        "quantile": "P50",
+        "from": 2000,
+        "to": 5000,
+        "relative_change": 0.0014939599525772987
+      },
+      {
+        "kind": "count",
+        "seed": 173,
+        "medium": "water",
+        "quantile": "P95",
+        "from": 2000,
+        "to": 5000,
+        "relative_change": 0.019977874865271084
+      },
+      {
+        "kind": "count",
+        "seed": 173,
+        "medium": "soil",
+        "quantile": "P5",
+        "from": 2000,
+        "to": 5000,
+        "relative_change": 0.01944234711022474
+      },
+      {
+        "kind": "count",
+        "seed": 173,
+        "medium": "soil",
+        "quantile": "P50",
+        "from": 2000,
+        "to": 5000,
+        "relative_change": 0.007261522013537794
+      },
+      {
+        "kind": "count",
+        "seed": 173,
+        "medium": "soil",
+        "quantile": "P95",
+        "from": 2000,
+        "to": 5000,
+        "relative_change": 0.013215796157525769
+      },
+      {
+        "kind": "count",
+        "seed": 173,
+        "medium": "sediment",
+        "quantile": "P5",
+        "from": 2000,
+        "to": 5000,
+        "relative_change": 0.014030624486827311
+      },
+      {
+        "kind": "count",
+        "seed": 173,
+        "medium": "sediment",
+        "quantile": "P50",
+        "from": 2000,
+        "to": 5000,
+        "relative_change": 0.013896932778817336
+      },
+      {
+        "kind": "count",
+        "seed": 173,
+        "medium": "sediment",
+        "quantile": "P95",
+        "from": 2000,
+        "to": 5000,
+        "relative_change": 0.03184939338017393
+      },
+      {
+        "kind": "count",
+        "seed": 273,
+        "medium": "air",
+        "quantile": "P5",
+        "from": 500,
+        "to": 1000,
+        "relative_change": 0.002584312146481011
+      },
+      {
+        "kind": "count",
+        "seed": 273,
+        "medium": "air",
+        "quantile": "P50",
+        "from": 500,
+        "to": 1000,
+        "relative_change": 0.009904262012783072
+      },
+      {
+        "kind": "count",
+        "seed": 273,
+        "medium": "air",
+        "quantile": "P95",
+        "from": 500,
+        "to": 1000,
+        "relative_change": 0.0086421599759252
+      },
+      {
+        "kind": "count",
+        "seed": 273,
+        "medium": "water",
+        "quantile": "P5",
+        "from": 500,
+        "to": 1000,
+        "relative_change": 0.017993216890987363
+      },
+      {
+        "kind": "count",
+        "seed": 273,
+        "medium": "water",
+        "quantile": "P50",
+        "from": 500,
+        "to": 1000,
+        "relative_change": 0.006390679878547419
+      },
+      {
+        "kind": "count",
+        "seed": 273,
+        "medium": "water",
+        "quantile": "P95",
+        "from": 500,
+        "to": 1000,
+        "relative_change": 0.006477252721562236
+      },
+      {
+        "kind": "count",
+        "seed": 273,
+        "medium": "soil",
+        "quantile": "P5",
+        "from": 500,
+        "to": 1000,
+        "relative_change": 0.024647532741180433
+      },
+      {
+        "kind": "count",
+        "seed": 273,
+        "medium": "soil",
+        "quantile": "P50",
+        "from": 500,
+        "to": 1000,
+        "relative_change": 0.02062947005396636
+      },
+      {
+        "kind": "count",
+        "seed": 273,
+        "medium": "soil",
+        "quantile": "P95",
+        "from": 500,
+        "to": 1000,
+        "relative_change": 0.00038410197413986407
+      },
+      {
+        "kind": "count",
+        "seed": 273,
+        "medium": "sediment",
+        "quantile": "P5",
+        "from": 500,
+        "to": 1000,
+        "relative_change": 0.023434128741076143
+      },
+      {
+        "kind": "count",
+        "seed": 273,
+        "medium": "sediment",
+        "quantile": "P50",
+        "from": 500,
+        "to": 1000,
+        "relative_change": 0.011410309614247263
+      },
+      {
+        "kind": "count",
+        "seed": 273,
+        "medium": "sediment",
+        "quantile": "P95",
+        "from": 500,
+        "to": 1000,
+        "relative_change": 0.03237380483575495
+      },
+      {
+        "kind": "count",
+        "seed": 273,
+        "medium": "air",
+        "quantile": "P5",
+        "from": 1000,
+        "to": 2000,
+        "relative_change": 0.02864750899921196
+      },
+      {
+        "kind": "count",
+        "seed": 273,
+        "medium": "air",
+        "quantile": "P50",
+        "from": 1000,
+        "to": 2000,
+        "relative_change": 0.020953468601026426
+      },
+      {
+        "kind": "count",
+        "seed": 273,
+        "medium": "air",
+        "quantile": "P95",
+        "from": 1000,
+        "to": 2000,
+        "relative_change": 0.024741236836837294
+      },
+      {
+        "kind": "count",
+        "seed": 273,
+        "medium": "water",
+        "quantile": "P5",
+        "from": 1000,
+        "to": 2000,
+        "relative_change": 0.018322904892796383
+      },
+      {
+        "kind": "count",
+        "seed": 273,
+        "medium": "water",
+        "quantile": "P50",
+        "from": 1000,
+        "to": 2000,
+        "relative_change": 0.009541149594223015
+      },
+      {
+        "kind": "count",
+        "seed": 273,
+        "medium": "water",
+        "quantile": "P95",
+        "from": 1000,
+        "to": 2000,
+        "relative_change": 0.004823347454777208
+      },
+      {
+        "kind": "count",
+        "seed": 273,
+        "medium": "soil",
+        "quantile": "P5",
+        "from": 1000,
+        "to": 2000,
+        "relative_change": 0.006407519291937161
+      },
+      {
+        "kind": "count",
+        "seed": 273,
+        "medium": "soil",
+        "quantile": "P50",
+        "from": 1000,
+        "to": 2000,
+        "relative_change": 0.014040705237283952
+      },
+      {
+        "kind": "count",
+        "seed": 273,
+        "medium": "soil",
+        "quantile": "P95",
+        "from": 1000,
+        "to": 2000,
+        "relative_change": 0.017686956422027625
+      },
+      {
+        "kind": "count",
+        "seed": 273,
+        "medium": "sediment",
+        "quantile": "P5",
+        "from": 1000,
+        "to": 2000,
+        "relative_change": 0.04027939958948708
+      },
+      {
+        "kind": "count",
+        "seed": 273,
+        "medium": "sediment",
+        "quantile": "P50",
+        "from": 1000,
+        "to": 2000,
+        "relative_change": 0.00015043399778277315
+      },
+      {
+        "kind": "count",
+        "seed": 273,
+        "medium": "sediment",
+        "quantile": "P95",
+        "from": 1000,
+        "to": 2000,
+        "relative_change": 0.003483035679244601
+      },
+      {
+        "kind": "count",
+        "seed": 273,
+        "medium": "air",
+        "quantile": "P5",
+        "from": 2000,
+        "to": 5000,
+        "relative_change": 0.004127028723650581
+      },
+      {
+        "kind": "count",
+        "seed": 273,
+        "medium": "air",
+        "quantile": "P50",
+        "from": 2000,
+        "to": 5000,
+        "relative_change": 0.0032894327247027914
+      },
+      {
+        "kind": "count",
+        "seed": 273,
+        "medium": "air",
+        "quantile": "P95",
+        "from": 2000,
+        "to": 5000,
+        "relative_change": 0.004989345953049872
+      },
+      {
+        "kind": "count",
+        "seed": 273,
+        "medium": "water",
+        "quantile": "P5",
+        "from": 2000,
+        "to": 5000,
+        "relative_change": 0.0014121539780067947
+      },
+      {
+        "kind": "count",
+        "seed": 273,
+        "medium": "water",
+        "quantile": "P50",
+        "from": 2000,
+        "to": 5000,
+        "relative_change": 0.004252758769981374
+      },
+      {
+        "kind": "count",
+        "seed": 273,
+        "medium": "water",
+        "quantile": "P95",
+        "from": 2000,
+        "to": 5000,
+        "relative_change": 0
+      },
+      {
+        "kind": "count",
+        "seed": 273,
+        "medium": "soil",
+        "quantile": "P5",
+        "from": 2000,
+        "to": 5000,
+        "relative_change": 0.0067041530023780405
+      },
+      {
+        "kind": "count",
+        "seed": 273,
+        "medium": "soil",
+        "quantile": "P50",
+        "from": 2000,
+        "to": 5000,
+        "relative_change": 0.017087111091102954
+      },
+      {
+        "kind": "count",
+        "seed": 273,
+        "medium": "soil",
+        "quantile": "P95",
+        "from": 2000,
+        "to": 5000,
+        "relative_change": 0.004120521214293427
+      },
+      {
+        "kind": "count",
+        "seed": 273,
+        "medium": "sediment",
+        "quantile": "P5",
+        "from": 2000,
+        "to": 5000,
+        "relative_change": 0.006771116739838946
+      },
+      {
+        "kind": "count",
+        "seed": 273,
+        "medium": "sediment",
+        "quantile": "P50",
+        "from": 2000,
+        "to": 5000,
+        "relative_change": 0.00012582641366714315
+      },
+      {
+        "kind": "count",
+        "seed": 273,
+        "medium": "sediment",
+        "quantile": "P95",
+        "from": 2000,
+        "to": 5000,
+        "relative_change": 0.01736500511283398
+      },
+      {
+        "kind": "seed_spread",
+        "medium": "air",
+        "quantile": "P5",
+        "iterations": 5000,
+        "relative_change": 0.04457254635563579
+      },
+      {
+        "kind": "seed_spread",
+        "medium": "air",
+        "quantile": "P50",
+        "iterations": 5000,
+        "relative_change": 0.022262143243048687
+      },
+      {
+        "kind": "seed_spread",
+        "medium": "air",
+        "quantile": "P95",
+        "iterations": 5000,
+        "relative_change": 0.008923481258238535
+      },
+      {
+        "kind": "seed_spread",
+        "medium": "water",
+        "quantile": "P5",
+        "iterations": 5000,
+        "relative_change": 0.005025885993809303
+      },
+      {
+        "kind": "seed_spread",
+        "medium": "water",
+        "quantile": "P50",
+        "iterations": 5000,
+        "relative_change": 0.0037961480996718316
+      },
+      {
+        "kind": "seed_spread",
+        "medium": "water",
+        "quantile": "P95",
+        "iterations": 5000,
+        "relative_change": 0.022382600017760275
+      },
+      {
+        "kind": "seed_spread",
+        "medium": "soil",
+        "quantile": "P5",
+        "iterations": 5000,
+        "relative_change": 0.023229577442170607
+      },
+      {
+        "kind": "seed_spread",
+        "medium": "soil",
+        "quantile": "P50",
+        "iterations": 5000,
+        "relative_change": 0.009977184039538003
+      },
+      {
+        "kind": "seed_spread",
+        "medium": "soil",
+        "quantile": "P95",
+        "iterations": 5000,
+        "relative_change": 0.02628980602036263
+      },
+      {
+        "kind": "seed_spread",
+        "medium": "sediment",
+        "quantile": "P5",
+        "iterations": 5000,
+        "relative_change": 0.028277270360801264
+      },
+      {
+        "kind": "seed_spread",
+        "medium": "sediment",
+        "quantile": "P50",
+        "iterations": 5000,
+        "relative_change": 0.012393527140278448
+      },
+      {
+        "kind": "seed_spread",
+        "medium": "sediment",
+        "quantile": "P95",
+        "iterations": 5000,
+        "relative_change": 0.007012487346894988
+      }
+    ],
+    "passed": true,
+    "meaning": "Pass means changes stayed below the chosen numerical threshold in these trials. It is not field validation or a proof of distribution-tail convergence."
+  },
+  "correlation": [
+    {
+      "group": 0,
+      "within": 0,
+      "summary": {
+        "air": {
+          "P5": 0.00006884189206601138,
+          "P50": 0.00012114022348460714,
+          "P95": 0.0002118742897911931
+        },
+        "water": {
+          "P5": 0.0002410017516215156,
+          "P50": 0.0004066479425094845,
+          "P95": 0.0006783284442040005
+        },
+        "soil": {
+          "P5": 0.8572696857806114,
+          "P50": 1.7570692690874212,
+          "P95": 3.5638707148761433
+        },
+        "sediment": {
+          "P5": 21.85359719363476,
+          "P50": 44.753100108679185,
+          "P95": 91.2267798388861
+        },
+        "stock": {
+          "P5": 4.849841310000711,
+          "P50": 7.215795574316042,
+          "P95": 10.757757862173332
+        },
+        "dissolved_share": {
+          "P5": 1.0713674317527513,
+          "P50": 1.445674692076934,
+          "P95": 1.9824226950753001
+        },
+        "large_aggregate_share": {
+          "P5": 5.55331743772718,
+          "P50": 7.856530553804496,
+          "P95": 10.928351049877257
+        },
+        "closure": {
+          "P5": 99.99999999999996,
+          "P50": 100,
+          "P95": 100.00000000000004
+        }
+      }
+    },
+    {
+      "group": 0.3,
+      "within": 0.5,
+      "summary": {
+        "air": {
+          "P5": 0.00006312742671054999,
+          "P50": 0.0001230308238416921,
+          "P95": 0.0002242915391703756
+        },
+        "water": {
+          "P5": 0.00024006881697541724,
+          "P50": 0.00040478497265342,
+          "P95": 0.0006811190886594714
+        },
+        "soil": {
+          "P5": 0.8586134230899117,
+          "P50": 1.7553590056045767,
+          "P95": 3.5705057179166753
+        },
+        "sediment": {
+          "P5": 21.879972473375503,
+          "P50": 44.738784066690506,
+          "P95": 90.86947759155169
+        },
+        "stock": {
+          "P5": 4.823352414413604,
+          "P50": 7.239560529349669,
+          "P95": 10.703589027703782
+        },
+        "dissolved_share": {
+          "P5": 1.035537726549645,
+          "P50": 1.4441290991940554,
+          "P95": 1.9927474480039706
+        },
+        "large_aggregate_share": {
+          "P5": 4.787108958902763,
+          "P50": 7.815547394664553,
+          "P95": 12.5218259200435
+        },
+        "closure": {
+          "P5": 99.99999999999996,
+          "P50": 100,
+          "P95": 100.00000000000004
+        }
+      }
+    },
+    {
+      "group": 0.8,
+      "within": 0.9,
+      "summary": {
+        "air": {
+          "P5": 0.00006211039150932596,
+          "P50": 0.00012292480438137412,
+          "P95": 0.00023466946392912763
+        },
+        "water": {
+          "P5": 0.00024119290171761186,
+          "P50": 0.0004050274751818047,
+          "P95": 0.000678811718806695
+        },
+        "soil": {
+          "P5": 0.8721089467661225,
+          "P50": 1.7606064530483945,
+          "P95": 3.5681564256327896
+        },
+        "sediment": {
+          "P5": 21.905318430875678,
+          "P50": 44.709004201235295,
+          "P95": 90.97239243530359
+        },
+        "stock": {
+          "P5": 4.857769412994842,
+          "P50": 7.239344245824608,
+          "P95": 10.72924599430447
+        },
+        "dissolved_share": {
+          "P5": 1.0211627192995123,
+          "P50": 1.4412399885308296,
+          "P95": 1.9832805633675727
+        },
+        "large_aggregate_share": {
+          "P5": 4.510745883425058,
+          "P50": 7.943692678926725,
+          "P95": 12.660968289042355
+        },
+        "closure": {
+          "P5": 99.99999999999996,
+          "P50": 100,
+          "P95": 100.00000000000004
+        }
+      }
+    }
+  ],
+  "sensitivity": {
+    "kind": "Local one-at-a-time fate sensitivity",
+    "fraction": 0.2,
+    "rows": [
+      {
+        "parameter": "environment.soil_area_ha",
+        "medium": "soil",
+        "unit": "ha",
+        "input": 1000,
+        "baseline": 1.730640941181999,
+        "low": 2.163301176477499,
+        "high": 1.4422007843183327,
+        "elasticity": -1.0416666666666667,
+        "max_relative_change": 0.25000000000000017,
+        "status": "calculated"
+      },
+      {
+        "parameter": "environment.soil_bulk_density_kg_m3",
+        "medium": "soil",
+        "unit": "kg/m3",
+        "input": 1300,
+        "baseline": 1.730640941181999,
+        "low": 2.163301176477499,
+        "high": 1.4422007843183327,
+        "elasticity": -1.0416666666666667,
+        "max_relative_change": 0.25000000000000017,
+        "status": "calculated"
+      },
+      {
+        "parameter": "environment.river_flow_m3_s",
+        "medium": "water",
+        "unit": "m3/s",
+        "input": 100,
+        "baseline": 0.0004096014845084829,
+        "low": 0.0005120018556356037,
+        "high": 0.0003413345704237358,
+        "elasticity": -1.0416666666666667,
+        "max_relative_change": 0.2500000000000001,
+        "status": "calculated"
+      },
+      {
+        "parameter": "environment.air_mixing_height_m",
+        "medium": "air",
+        "unit": "m",
+        "input": 1000,
+        "baseline": 0.00012098608439484771,
+        "low": 0.00015123260549355965,
+        "high": 0.00010082173699570642,
+        "elasticity": -1.0416666666666667,
+        "max_relative_change": 0.25000000000000006,
+        "status": "calculated"
+      },
+      {
+        "parameter": "region.area_km2",
+        "medium": "air",
+        "unit": "km2",
+        "input": 100459.873,
+        "baseline": 0.00012098608439484771,
+        "low": 0.00015123260549355965,
+        "high": 0.00010082173699570642,
+        "elasticity": -1.0416666666666667,
+        "max_relative_change": 0.25000000000000006,
+        "status": "calculated"
+      },
+      {
+        "parameter": "environment.soil_depth_m",
+        "medium": "soil",
+        "unit": "m",
+        "input": 0.2,
+        "baseline": 1.730640941181999,
+        "low": 2.1633011764774985,
+        "high": 1.4422007843183327,
+        "elasticity": -1.041666666666666,
+        "max_relative_change": 0.24999999999999992,
+        "status": "calculated"
+      },
+      {
+        "parameter": "environment.sediment_area_km2",
+        "medium": "sediment",
+        "unit": "km2",
+        "input": 1,
+        "baseline": 43.0961322170392,
+        "low": 53.87016527129899,
+        "high": 35.91344351419933,
+        "elasticity": -1.0416666666666663,
+        "max_relative_change": 0.24999999999999975,
+        "status": "calculated"
+      },
+      {
+        "parameter": "environment.sediment_bulk_density_kg_m3",
+        "medium": "sediment",
+        "unit": "kg/m3",
+        "input": 1300,
+        "baseline": 43.0961322170392,
+        "low": 53.87016527129899,
+        "high": 35.91344351419933,
+        "elasticity": -1.0416666666666663,
+        "max_relative_change": 0.24999999999999975,
+        "status": "calculated"
+      },
+      {
+        "parameter": "environment.sediment_depth_m",
+        "medium": "sediment",
+        "unit": "m",
+        "input": 0.05,
+        "baseline": 43.0961322170392,
+        "low": 53.87016527129898,
+        "high": 35.91344351419933,
+        "elasticity": -1.0416666666666659,
+        "max_relative_change": 0.24999999999999958,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.air_to_soil_y",
+        "medium": "air",
+        "unit": "1/year",
+        "input": 45,
+        "baseline": 0.00012098608439484771,
+        "low": 0.00013565712671391542,
+        "high": 0.0001091786772293486,
+        "elasticity": -0.5471383262175898,
+        "max_relative_change": 0.12126222939150251,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.air_advective_y",
+        "medium": "air",
+        "unit": "1/year",
+        "input": 20,
+        "baseline": 0.00012098608439484771,
+        "low": 0.0001271314288275072,
+        "high": 0.00011540744443226246,
+        "elasticity": -0.24225894353648503,
+        "max_relative_change": 0.05079381206026686,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.air_to_water_y",
+        "medium": "air",
+        "unit": "1/year",
+        "input": 18,
+        "baseline": 0.00012098608439484771,
+        "low": 0.00012648890617853248,
+        "high": 0.00011594208305067976,
+        "elasticity": -0.21793463232995297,
+        "max_relative_change": 0.04548309676446646,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.air_to_soil_y",
+        "medium": "soil",
+        "unit": "1/year",
+        "input": 45,
+        "baseline": 1.730640941181999,
+        "low": 1.6678699750580694,
+        "high": 1.7811912429391508,
+        "elasticity": 0.16369840962459373,
+        "max_relative_change": 0.03627035777915781,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.air_to_water_y",
+        "medium": "water",
+        "unit": "1/year",
+        "input": 18,
+        "baseline": 0.0004096014845084829,
+        "low": 0.00039863448330620103,
+        "high": 0.00041965480775990756,
+        "elasticity": 0.12829741375895332,
+        "max_relative_change": 0.026774808239384596,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.air_to_soil_y",
+        "medium": "water",
+        "unit": "1/year",
+        "input": 45,
+        "baseline": 0.0004096014845084829,
+        "low": 0.0004174742571513268,
+        "high": 0.0004032648421745949,
+        "elasticity": -0.08672707200868082,
+        "max_relative_change": 0.01922056667419337,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.air_advective_y",
+        "medium": "soil",
+        "unit": "1/year",
+        "input": 20,
+        "baseline": 1.730640941181999,
+        "low": 1.7613566059800734,
+        "high": 1.7027426970372692,
+        "elasticity": -0.08467081118335823,
+        "max_relative_change": 0.01774814409342248,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.air_to_water_y",
+        "medium": "soil",
+        "unit": "1/year",
+        "input": 18,
+        "baseline": 1.730640941181999,
+        "low": 1.758086330547581,
+        "high": 1.7054716947239663,
+        "elasticity": -0.07600455208762089,
+        "max_relative_change": 0.015858511556323864,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.sediment_burial_y",
+        "medium": "sediment",
+        "unit": "1/year",
+        "input": 0.04,
+        "baseline": 43.0961322170392,
+        "low": 43.5958284818564,
+        "high": 42.60419864796318,
+        "elasticity": -0.057524294111778417,
+        "max_relative_change": 0.011594921379502238,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.sediment_resuspension_to_water_y",
+        "medium": "water",
+        "unit": "1/year",
+        "input": 0.025,
+        "baseline": 0.0004096014845084829,
+        "low": 0.0004056253515090777,
+        "high": 0.00041352381388764343,
+        "elasticity": 0.048208213820585766,
+        "max_relative_change": 0.00970732077345013,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.air_advective_y",
+        "medium": "water",
+        "unit": "1/year",
+        "input": 20,
+        "baseline": 0.0004096014845084829,
+        "low": 0.00041322947995951705,
+        "high": 0.0004063076265878842,
+        "elasticity": -0.042247487090647434,
+        "max_relative_change": 0.008857378667432518,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.sediment_resuspension_to_water_y",
+        "medium": "sediment",
+        "unit": "1/year",
+        "input": 0.025,
+        "baseline": 43.0961322170392,
+        "low": 43.39627177193118,
+        "high": 42.798807923624906,
+        "elasticity": -0.034658785926388366,
+        "max_relative_change": 0.006964419762321881,
+        "status": "calculated"
+      },
+      {
+        "parameter": "water_residence_time_days",
+        "medium": "sediment",
+        "unit": "days",
+        "input": 30,
+        "baseline": 43.0961322170392,
+        "low": 42.8488460819264,
+        "high": 43.36359170149024,
+        "elasticity": 0.02986031420241475,
+        "max_relative_change": 0.006206113418811584,
+        "status": "calculated"
+      },
+      {
+        "parameter": "water_residence_time_days",
+        "medium": "water",
+        "unit": "days",
+        "input": 30,
+        "baseline": 0.0004096014845084829,
+        "low": 0.00041184997981787836,
+        "high": 0.0004071753490305128,
+        "elasticity": -0.028531578645125462,
+        "max_relative_change": 0.005923160852020508,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.soil_runoff_to_water_y",
+        "medium": "water",
+        "unit": "1/year",
+        "input": 0.01,
+        "baseline": 0.0004096014845084829,
+        "low": 0.00040762238776149284,
+        "high": 0.00041157058254821544,
+        "elasticity": 0.024097781233998604,
+        "max_relative_change": 0.004831761655759054,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.soil_runoff_to_water_y",
+        "medium": "soil",
+        "unit": "1/year",
+        "input": 0.01,
+        "baseline": 1.730640941181999,
+        "low": 1.7349001196745126,
+        "high": 1.7263967589274674,
+        "elasticity": -0.012283542681646055,
+        "max_relative_change": 0.0024610411039997257,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.soil_irreversible_retention_y",
+        "medium": "soil",
+        "unit": "1/year",
+        "input": 0.015,
+        "baseline": 1.730640941181999,
+        "low": 1.7343386719920588,
+        "high": 1.7269612914349428,
+        "elasticity": -0.01065700628819832,
+        "max_relative_change": 0.0021366250630442,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_free_settling_y",
+        "medium": "sediment",
+        "unit": "1/year",
+        "input": 0.12,
+        "baseline": 43.0961322170392,
+        "low": 43.01342058599557,
+        "high": 43.178585773635454,
+        "elasticity": 0.009581207125971703,
+        "max_relative_change": 0.0019192355969923287,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.soil_to_air_y",
+        "medium": "air",
+        "unit": "1/year",
+        "input": 0.002,
+        "baseline": 0.00012098608439484771,
+        "low": 0.00012077517643507821,
+        "high": 0.00012119687803935872,
+        "elasticity": 0.008713845199424962,
+        "max_relative_change": 0.0017432414713182054,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_small_settling_y",
+        "medium": "sediment",
+        "unit": "1/year",
+        "input": 0.65,
+        "baseline": 43.0961322170392,
+        "low": 43.02176344126926,
+        "high": 43.169182730940186,
+        "elasticity": 0.008551770314822023,
+        "max_relative_change": 0.0017256484966077033,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_free_to_small_y",
+        "medium": "sediment",
+        "unit": "1/year",
+        "input": 2.2,
+        "baseline": 43.0961322170392,
+        "low": 43.028796918053715,
+        "high": 43.159630349803706,
+        "elasticity": 0.007589627248397411,
+        "max_relative_change": 0.001562444134113284,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_small_settling_y",
+        "medium": "water",
+        "unit": "1/year",
+        "input": 0.65,
+        "baseline": 0.0004096014845084829,
+        "low": 0.00041021011244822656,
+        "high": 0.00040900371735023234,
+        "elasticity": -0.007363224644082241,
+        "max_relative_change": 0.001485902670675093,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_free_settling_y",
+        "medium": "water",
+        "unit": "1/year",
+        "input": 0.12,
+        "baseline": 0.0004096014845084829,
+        "low": 0.0004102077026948026,
+        "high": 0.0004089971734644258,
+        "elasticity": -0.007388457294224974,
+        "max_relative_change": 0.0014800195049272378,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.soil_free_to_small_y",
+        "medium": "soil",
+        "unit": "1/year",
+        "input": 0.7,
+        "baseline": 1.730640941181999,
+        "low": 1.7328667962405593,
+        "high": 1.72874843899094,
+        "elasticity": -0.005949179219703593,
+        "max_relative_change": 0.0012861449221466472,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_free_to_small_y",
+        "medium": "water",
+        "unit": "1/year",
+        "input": 2.2,
+        "baseline": 0.0004096014845084829,
+        "low": 0.0004101097060866324,
+        "high": 0.0004091228953985216,
+        "elasticity": -0.00602299262473959,
+        "max_relative_change": 0.0012407708403677474,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.soil_erosion_to_sediment_y",
+        "medium": "sediment",
+        "unit": "1/year",
+        "input": 0.004,
+        "baseline": 43.0961322170392,
+        "low": 43.05808452332994,
+        "high": 43.134129845833655,
+        "elasticity": 0.004411377459625613,
+        "max_relative_change": 0.0008828563435262613,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.soil_particulate_transformation_y",
+        "medium": "water",
+        "unit": "1/year",
+        "input": 0.12,
+        "baseline": 0.0004096014845084829,
+        "low": 0.0004099031039175386,
+        "high": 0.0004093125315768845,
+        "elasticity": -0.0036045544449307292,
+        "max_relative_change": 0.0007363728415624255,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.soil_erosion_to_sediment_y",
+        "medium": "soil",
+        "unit": "1/year",
+        "input": 0.004,
+        "baseline": 1.730640941181999,
+        "low": 1.731625210166314,
+        "high": 1.7296579579182911,
+        "elasticity": -0.002841797222651172,
+        "max_relative_change": 0.0005687309024614317,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.sediment_burial_y",
+        "medium": "water",
+        "unit": "1/year",
+        "input": 0.04,
+        "baseline": 0.0004096014845084829,
+        "low": 0.0004098342865605266,
+        "high": 0.0004093721909748767,
+        "elasticity": -0.002820397405324195,
+        "max_relative_change": 0.0005683623249633244,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.air_to_water_y",
+        "medium": "sediment",
+        "unit": "1/year",
+        "input": 18,
+        "baseline": 43.0961322170392,
+        "low": 43.07284876647245,
+        "high": 43.11738734733911,
+        "elasticity": 0.0025836762242584022,
+        "max_relative_change": 0.0005402677541801642,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.soil_small_to_large_y",
+        "medium": "water",
+        "unit": "1/year",
+        "input": 0.25,
+        "baseline": 0.0004096014845084829,
+        "low": 0.0004098201278713891,
+        "high": 0.0004093977389696105,
+        "elasticity": -0.002578047918243704,
+        "max_relative_change": 0.0005337953380920396,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.soil_free_to_small_y",
+        "medium": "water",
+        "unit": "1/year",
+        "input": 0.7,
+        "baseline": 0.0004096014845084829,
+        "low": 0.00040980938065255117,
+        "high": 0.0004094266448177344,
+        "elasticity": -0.00233602568162088,
+        "max_relative_change": 0.0005075571059458435,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.soil_free_to_small_y",
+        "medium": "sediment",
+        "unit": "1/year",
+        "input": 0.7,
+        "baseline": 43.0961322170392,
+        "low": 43.074771394946445,
+        "high": 43.11430855536696,
+        "elasticity": 0.0022935445935959877,
+        "max_relative_change": 0.0004956552013803925,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_large_settling_y",
+        "medium": "water",
+        "unit": "1/year",
+        "input": 3.5,
+        "baseline": 0.0004096014845084829,
+        "low": 0.0004097939358709026,
+        "high": 0.00040942452895967747,
+        "elasticity": -0.002254672683061929,
+        "max_relative_change": 0.00046985025615969926,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_large_settling_y",
+        "medium": "sediment",
+        "unit": "1/year",
+        "input": 3.5,
+        "baseline": 43.0961322170392,
+        "low": 43.076165550772046,
+        "high": 43.114493956985754,
+        "elasticity": 0.002223424948013883,
+        "max_relative_change": 0.00046330529539394423,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_small_to_large_y",
+        "medium": "sediment",
+        "unit": "1/year",
+        "input": 0.85,
+        "baseline": 43.0961322170392,
+        "low": 43.079802319213286,
+        "high": 43.11207768102877,
+        "elasticity": 0.001872288773673602,
+        "max_relative_change": 0.0003789179442756499,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_small_to_large_y",
+        "medium": "water",
+        "unit": "1/year",
+        "input": 0.85,
+        "baseline": 0.0004096014845084829,
+        "low": 0.00040973814117094856,
+        "high": 0.0004094681209718156,
+        "elasticity": -0.0016480665314054697,
+        "max_relative_change": 0.00033363322066478344,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.air_to_soil_y",
+        "medium": "sediment",
+        "unit": "1/year",
+        "input": 45,
+        "baseline": 43.0961322170392,
+        "low": 43.10921528515997,
+        "high": 43.085724964258816,
+        "elasticity": -0.0013626699017241458,
+        "max_relative_change": 0.00030357870759451736,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.air_advective_y",
+        "medium": "sediment",
+        "unit": "1/year",
+        "input": 20,
+        "baseline": 43.0961322170392,
+        "low": 43.10880706684942,
+        "high": 43.08465748946132,
+        "elasticity": -0.0014009132691119512,
+        "max_relative_change": 0.00029410643503671887,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.soil_to_air_y",
+        "medium": "soil",
+        "unit": "1/year",
+        "input": 0.002,
+        "baseline": 1.730640941181999,
+        "low": 1.7311089171176608,
+        "high": 1.7301731373816458,
+        "elasticity": -0.0013517820388784323,
+        "max_relative_change": 0.00027040613944000154,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.soil_to_air_y",
+        "medium": "water",
+        "unit": "1/year",
+        "input": 0.002,
+        "baseline": 0.0004096014845084829,
+        "low": 0.0004094933495276691,
+        "high": 0.00040970956264604067,
+        "elasticity": 0.0013196553634993665,
+        "max_relative_change": 0.00026400046118870666,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_to_soil_y",
+        "medium": "water",
+        "unit": "1/year",
+        "input": 0.015,
+        "baseline": 0.0004096014845084829,
+        "low": 0.00040969754338546286,
+        "high": 0.0004095054704324565,
+        "elasticity": -0.0011723160210029954,
+        "max_relative_change": 0.00023451789266636767,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_to_soil_y",
+        "medium": "soil",
+        "unit": "1/year",
+        "input": 0.015,
+        "baseline": 1.730640941181999,
+        "low": 1.730306028560912,
+        "high": 1.7309756995845387,
+        "elasticity": 0.0009673742942445941,
+        "max_relative_change": 0.00019351941417625334,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.sediment_dissolved_exchange_to_water_y",
+        "medium": "water",
+        "unit": "1/year",
+        "input": 0.05,
+        "baseline": 0.0004096014845084829,
+        "low": 0.00040952497924339257,
+        "high": 0.00040967662060440444,
+        "elasticity": 0.000925542061900971,
+        "max_relative_change": 0.00018677975540580834,
+        "status": "calculated"
+      },
+      {
+        "parameter": "water_residence_time_days",
+        "medium": "soil",
+        "unit": "days",
+        "input": 30,
+        "baseline": 1.730640941181999,
+        "low": 1.7303200640662884,
+        "high": 1.7309541046307495,
+        "elasticity": 0.0009159042603431474,
+        "max_relative_change": 0.00018540940993309174,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_transformed_settling_y",
+        "medium": "water",
+        "unit": "1/year",
+        "input": 1.1,
+        "baseline": 0.0004096014845084829,
+        "low": 0.00040967120742441165,
+        "high": 0.0004095338937545126,
+        "elasticity": -0.0008380930922640939,
+        "max_relative_change": 0.00017022134578538947,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.sediment_free_to_small_y",
+        "medium": "water",
+        "unit": "1/year",
+        "input": 0.35,
+        "baseline": 0.0004096014845084829,
+        "low": 0.00040966961022307485,
+        "high": 0.00040954026908989627,
+        "elasticity": -0.0007894327661787901,
+        "max_relative_change": 0.00016632194259179697,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.soil_small_to_large_y",
+        "medium": "soil",
+        "unit": "1/year",
+        "input": 0.25,
+        "baseline": 1.730640941181999,
+        "low": 1.7303639203637737,
+        "high": 1.730902855764919,
+        "elasticity": 0.0007785199522341033,
+        "max_relative_change": 0.00016006833747734286,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_transformed_settling_y",
+        "medium": "sediment",
+        "unit": "1/year",
+        "input": 1.1,
+        "baseline": 43.0961322170392,
+        "low": 43.08948363786174,
+        "high": 43.10257762215653,
+        "elasticity": 0.000759580014561839,
+        "max_relative_change": 0.00015427322210668156,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.soil_runoff_to_water_y",
+        "medium": "sediment",
+        "unit": "1/year",
+        "input": 0.01,
+        "baseline": 43.0961322170392,
+        "low": 43.09139627790626,
+        "high": 43.10084816357961,
+        "elasticity": 0.0005483024338326258,
+        "max_relative_change": 0.00010989244020981193,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.sediment_particulate_dissolution_y",
+        "medium": "water",
+        "unit": "1/year",
+        "input": 0.008,
+        "baseline": 0.0004096014845084829,
+        "low": 0.00040956067848349573,
+        "high": 0.00040964216556891767,
+        "elasticity": 0.0004973558965473576,
+        "max_relative_change": 0.00009962372337627592,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.sediment_dissolved_exchange_to_water_y",
+        "medium": "sediment",
+        "unit": "1/year",
+        "input": 0.05,
+        "baseline": 43.0961322170392,
+        "low": 43.10038960481893,
+        "high": 43.09193339826912,
+        "elasticity": -0.0004905432410513204,
+        "max_relative_change": 0.00009878816405820466,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_particulate_transformation_y",
+        "medium": "sediment",
+        "unit": "1/year",
+        "input": 0.08,
+        "baseline": 43.0961322170392,
+        "low": 43.09243213939098,
+        "high": 43.09982426648128,
+        "elasticity": 0.0004288161553031376,
+        "max_relative_change": 0.00008585637406124015,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.sediment_free_to_small_y",
+        "medium": "sediment",
+        "unit": "1/year",
+        "input": 0.35,
+        "baseline": 43.0961322170392,
+        "low": 43.092468883219716,
+        "high": 43.099500258169186,
+        "elasticity": 0.0004078889791118023,
+        "max_relative_change": 0.00008500377252029616,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.sediment_small_to_large_y",
+        "medium": "water",
+        "unit": "1/year",
+        "input": 0.18,
+        "baseline": 0.0004096014845084829,
+        "low": 0.00040963115293716476,
+        "high": 0.0004095732646535758,
+        "elasticity": -0.00035332076285338995,
+        "max_relative_change": 0.00007243242469553406,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_particulate_transformation_y",
+        "medium": "water",
+        "unit": "1/year",
+        "input": 0.08,
+        "baseline": 0.0004096014845084829,
+        "low": 0.0004096292500860893,
+        "high": 0.0004095737804745783,
+        "elasticity": -0.0003385584135369372,
+        "max_relative_change": 0.00006778680902418935,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.soil_particulate_transformation_y",
+        "medium": "sediment",
+        "unit": "1/year",
+        "input": 0.12,
+        "baseline": 43.0961322170392,
+        "low": 43.09350841483778,
+        "high": 43.09868943375189,
+        "elasticity": 0.00030055011015968797,
+        "max_relative_change": 0.000060882544823416624,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.soil_particulate_dissolution_y",
+        "medium": "soil",
+        "unit": "1/year",
+        "input": 0.015,
+        "baseline": 1.730640941181999,
+        "low": 1.7305716169974819,
+        "high": 1.7307099352113409,
+        "elasticity": 0.00019980778590119217,
+        "max_relative_change": 0.00004005694241218994,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.air_free_to_small_y",
+        "medium": "sediment",
+        "unit": "1/year",
+        "input": 1.5,
+        "baseline": 43.0961322170392,
+        "low": 43.09450824339067,
+        "high": 43.09774474234378,
+        "elasticity": 0.00018774880636665802,
+        "max_relative_change": 0.00003768258460756785,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.soil_irreversible_retention_y",
+        "medium": "water",
+        "unit": "1/year",
+        "input": 0.015,
+        "baseline": 0.0004096014845084829,
+        "low": 0.0004096159948297022,
+        "high": 0.00040958703684126116,
+        "elasticity": -0.00017674489434390574,
+        "max_relative_change": 0.00003542546052212646,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.soil_erosion_to_sediment_y",
+        "medium": "water",
+        "unit": "1/year",
+        "input": 0.004,
+        "baseline": 0.0004096014845084829,
+        "low": 0.0004095885857751217,
+        "high": 0.0004096143663529046,
+        "elasticity": 0.0001573515890317651,
+        "max_relative_change": 0.000031490934112883464,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.sediment_particulate_transformation_y",
+        "medium": "water",
+        "unit": "1/year",
+        "input": 0.07,
+        "baseline": 0.0004096014845084829,
+        "low": 0.00040961401580176174,
+        "high": 0.0004095892212437597,
+        "elasticity": -0.0001513334237043393,
+        "max_relative_change": 0.00003059386685050225,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.sediment_small_to_large_y",
+        "medium": "sediment",
+        "unit": "1/year",
+        "input": 0.18,
+        "baseline": 43.0961322170392,
+        "low": 43.09482312276631,
+        "high": 43.097389534048226,
+        "elasticity": 0.00014887712364729865,
+        "max_relative_change": 0.0000303761429517159,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.soil_particulate_dissolution_y",
+        "medium": "air",
+        "unit": "1/year",
+        "input": 0.015,
+        "baseline": 0.00012098608439484771,
+        "low": 0.00012098975159545066,
+        "high": 0.00012098243814315605,
+        "elasticity": -0.00015112176601121395,
+        "max_relative_change": 0.000030310928907971724,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.air_free_to_small_y",
+        "medium": "water",
+        "unit": "1/year",
+        "input": 1.5,
+        "baseline": 0.0004096014845084829,
+        "low": 0.0004096138028623429,
+        "high": 0.00040958925332241873,
+        "elasticity": -0.00014983795745762005,
+        "max_relative_change": 0.000030073997106572637,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.soil_particulate_transformation_y",
+        "medium": "soil",
+        "unit": "1/year",
+        "input": 0.12,
+        "baseline": 1.730640941181999,
+        "low": 1.730592593804893,
+        "high": 1.7306855513835677,
+        "elasticity": 0.000134282011454223,
+        "max_relative_change": 0.00002793611081048202,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.sediment_particulate_dissolution_y",
+        "medium": "sediment",
+        "unit": "1/year",
+        "input": 0.008,
+        "baseline": 43.0961322170392,
+        "low": 43.09498309771816,
+        "high": 43.09727866588025,
+        "elasticity": 0.0001331655559325556,
+        "max_relative_change": 0.00002666409401306645,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_free_dissolution_y",
+        "medium": "sediment",
+        "unit": "1/year",
+        "input": 0.08,
+        "baseline": 43.0961322170392,
+        "low": 43.09708453547681,
+        "high": 43.09518192708989,
+        "elasticity": -0.00011037001982793037,
+        "max_relative_change": 0.000022097538424471338,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.soil_runoff_to_water_y",
+        "medium": "air",
+        "unit": "1/year",
+        "input": 0.01,
+        "baseline": 0.00012098608439484771,
+        "low": 0.00012098864992493325,
+        "high": 0.0001209835278130281,
+        "elasticity": -0.00010584093060727821,
+        "max_relative_change": 0.00002120516667984149,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.soil_particulate_dissolution_y",
+        "medium": "water",
+        "unit": "1/year",
+        "input": 0.015,
+        "baseline": 0.0004096014845084829,
+        "low": 0.00040959329264421613,
+        "high": 0.00040960962207808996,
+        "elasticity": 0.00009966659357582291,
+        "max_relative_change": 0.000019999596135785236,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.soil_irreversible_retention_y",
+        "medium": "air",
+        "unit": "1/year",
+        "input": 0.015,
+        "baseline": 0.00012098608439484771,
+        "low": 0.00012098834642792018,
+        "high": 0.00012098383339954559,
+        "elasticity": -0.00009325511270916127,
+        "max_relative_change": 0.000018696638409100973,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_free_dissolution_y",
+        "medium": "water",
+        "unit": "1/year",
+        "input": 0.08,
+        "baseline": 0.0004096014845084829,
+        "low": 0.00040959421551205774,
+        "high": 0.0004096087376468405,
+        "elasticity": 0.00008863575531357068,
+        "max_relative_change": 0.000017746508985196762,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.sediment_dissolved_reprecipitation_y",
+        "medium": "water",
+        "unit": "1/year",
+        "input": 0.18,
+        "baseline": 0.0004096014845084829,
+        "low": 0.0004096085910916363,
+        "high": 0.00040959472222271354,
+        "elasticity": -0.00008464855138039659,
+        "max_relative_change": 0.000017349993645436252,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.sediment_particulate_transformation_y",
+        "medium": "sediment",
+        "unit": "1/year",
+        "input": 0.07,
+        "baseline": 43.0961322170392,
+        "low": 43.09545774123173,
+        "high": 43.096795288454814,
+        "elasticity": 0.0000775909086425924,
+        "max_relative_change": 0.000015650495131856194,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.soil_particulate_dissolution_y",
+        "medium": "sediment",
+        "unit": "1/year",
+        "input": 0.015,
+        "baseline": 43.0961322170392,
+        "low": 43.09679681219419,
+        "high": 43.09547084633749,
+        "elasticity": -0.00007691907536058454,
+        "max_relative_change": 0.000015421225079948332,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.air_free_to_small_y",
+        "medium": "soil",
+        "unit": "1/year",
+        "input": 1.5,
+        "baseline": 1.730640941181999,
+        "low": 1.7306676032524435,
+        "high": 1.730614466819605,
+        "elasticity": -0.0000767583147578689,
+        "max_relative_change": 0.000015405893741505942,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.soil_dissolved_reprecipitation_y",
+        "medium": "water",
+        "unit": "1/year",
+        "input": 0.12,
+        "baseline": 0.0004096014845084829,
+        "low": 0.0004096068389978291,
+        "high": 0.0004095963105019283,
+        "elasticity": -0.00006426060633926611,
+        "max_relative_change": 0.000013072436376993005,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.soil_large_fragmentation_y",
+        "medium": "water",
+        "unit": "1/year",
+        "input": 0.03,
+        "baseline": 0.0004096014845084829,
+        "low": 0.0004095962387546953,
+        "high": 0.0004096066950180947,
+        "elasticity": 0.00006381973573622344,
+        "max_relative_change": 0.000012806969666917232,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.soil_irreversible_retention_y",
+        "medium": "sediment",
+        "unit": "1/year",
+        "input": 0.015,
+        "baseline": 43.0961322170392,
+        "low": 43.09664421159082,
+        "high": 43.095622165166134,
+        "elasticity": -0.000059288755864439783,
+        "max_relative_change": 0.000011880290069750912,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.soil_small_to_large_y",
+        "medium": "sediment",
+        "unit": "1/year",
+        "input": 0.25,
+        "baseline": 43.0961322170392,
+        "low": 43.09662518795581,
+        "high": 43.09566591609353,
+        "elasticity": -0.00005564721315635406,
+        "max_relative_change": 0.000011438866813567392,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.soil_free_to_small_y",
+        "medium": "air",
+        "unit": "1/year",
+        "input": 0.7,
+        "baseline": 0.00012098608439484771,
+        "low": 0.0001209874449236563,
+        "high": 0.00012098492748177373,
+        "elasticity": -0.00005201924450989945,
+        "max_relative_change": 0.00001124533300996421,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.soil_to_air_y",
+        "medium": "sediment",
+        "unit": "1/year",
+        "input": 0.002,
+        "baseline": 43.0961322170392,
+        "low": 43.09577624925919,
+        "high": 43.09648801331677,
+        "elasticity": 0.00004128932348265374,
+        "max_relative_change": 0.000008259854462509057,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_small_dissolution_y",
+        "medium": "sediment",
+        "unit": "1/year",
+        "input": 0.04,
+        "baseline": 43.0961322170392,
+        "low": 43.09641729768139,
+        "high": 43.09584745813956,
+        "elasticity": -0.0000330563041575454,
+        "max_relative_change": 0.000006614993678725581,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_to_soil_y",
+        "medium": "sediment",
+        "unit": "1/year",
+        "input": 0.015,
+        "baseline": 43.0961322170392,
+        "low": 43.09640420864736,
+        "high": 43.09586038720211,
+        "elasticity": -0.00003154699837734005,
+        "max_relative_change": 0.000006311276538438152,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_small_dissolution_y",
+        "medium": "water",
+        "unit": "1/year",
+        "input": 0.04,
+        "baseline": 0.0004096014845084829,
+        "low": 0.00040959908122810835,
+        "high": 0.00040960388500993315,
+        "elasticity": 0.000029319851163156994,
+        "max_relative_change": 0.000005867362461956329,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.sediment_resuspension_to_water_y",
+        "medium": "soil",
+        "unit": "1/year",
+        "input": 0.025,
+        "baseline": 1.730640941181999,
+        "low": 1.7306319964102002,
+        "high": 1.7306498045268983,
+        "elasticity": 0.00002572474202245056,
+        "max_relative_change": 0.000005168473474742331,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.soil_erosion_to_sediment_y",
+        "medium": "air",
+        "unit": "1/year",
+        "input": 0.004,
+        "baseline": 0.00012098608439484771,
+        "low": 0.00012098668650951026,
+        "high": 0.0001209854830650667,
+        "elasticity": -0.00002486741449601106,
+        "max_relative_change": 0.000004976726584358158,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.soil_dissolved_reprecipitation_y",
+        "medium": "air",
+        "unit": "1/year",
+        "input": 0.12,
+        "baseline": 0.00012098608439484771,
+        "low": 0.00012098563457258481,
+        "high": 0.00012098651873365396,
+        "elasticity": 0.00001826989181379523,
+        "max_relative_change": 0.000003717966947660223,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.soil_transformed_dissolution_y",
+        "medium": "water",
+        "unit": "1/year",
+        "input": 0.004,
+        "baseline": 0.0004096014845084829,
+        "low": 0.00040959998503865575,
+        "high": 0.00040960298229641236,
+        "elasticity": 0.000018293743247780652,
+        "max_relative_change": 0.000003660801739931175,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.soil_dissolved_reprecipitation_y",
+        "medium": "soil",
+        "unit": "1/year",
+        "input": 0.12,
+        "baseline": 1.730640941181999,
+        "low": 1.7306466459703853,
+        "high": 1.730635393919278,
+        "elasticity": -0.00001625416751613602,
+        "max_relative_change": 0.000003296344291066633,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.sediment_dissolved_reprecipitation_y",
+        "medium": "sediment",
+        "unit": "1/year",
+        "input": 0.18,
+        "baseline": 43.0961322170392,
+        "low": 43.096272105580816,
+        "high": 43.09599795477596,
+        "elasticity": -0.000015903446014317086,
+        "max_relative_change": 0.0000032459651115197056,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_large_fragmentation_y",
+        "medium": "water",
+        "unit": "1/year",
+        "input": 0.12,
+        "baseline": 0.0004096014845084829,
+        "low": 0.0004096002031968995,
+        "high": 0.0004096027622063716,
+        "elasticity": 0.00001561889769008835,
+        "max_relative_change": 0.000003128190770490067,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_large_fragmentation_y",
+        "medium": "sediment",
+        "unit": "1/year",
+        "input": 0.12,
+        "baseline": 43.0961322170392,
+        "low": 43.096262893723406,
+        "high": 43.09600190266543,
+        "elasticity": -0.000015140051122420867,
+        "max_relative_change": 0.0000030322137390342366,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.soil_large_fragmentation_y",
+        "medium": "soil",
+        "unit": "1/year",
+        "input": 0.03,
+        "baseline": 1.730640941181999,
+        "low": 1.7306461176664352,
+        "high": 1.730635793867392,
+        "elasticity": -0.000014913259587150789,
+        "max_relative_change": 0.0000029910793816500966,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.soil_particulate_transformation_y",
+        "medium": "air",
+        "unit": "1/year",
+        "input": 0.12,
+        "baseline": 0.00012098608439484771,
+        "low": 0.00012098573683619531,
+        "high": 0.00012098641878381765,
+        "elasticity": 0.000014091447494809714,
+        "max_relative_change": 0.000002872715933757444,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.sediment_transformed_dissolution_y",
+        "medium": "water",
+        "unit": "1/year",
+        "input": 0.003,
+        "baseline": 0.0004096014845084829,
+        "low": 0.00040960033497421306,
+        "high": 0.00040960263311821997,
+        "elasticity": 0.00001402670701784593,
+        "max_relative_change": 0.000002806469979560378,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.soil_dissolved_reprecipitation_y",
+        "medium": "sediment",
+        "unit": "1/year",
+        "input": 0.12,
+        "baseline": 43.0961322170392,
+        "low": 43.09604267499861,
+        "high": 43.096219274751704,
+        "elasticity": 0.0000102445245090273,
+        "max_relative_change": 0.0000020777279998152883,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.air_particulate_transformation_y",
+        "medium": "water",
+        "unit": "1/year",
+        "input": 0.04,
+        "baseline": 0.0004096014845084829,
+        "low": 0.00040960221037333286,
+        "high": 0.0004096007587823243,
+        "elasticity": -0.00000885977629160296,
+        "max_relative_change": 0.0000017721245586158547,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_to_soil_y",
+        "medium": "air",
+        "unit": "1/year",
+        "input": 0.015,
+        "baseline": 0.00012098608439484771,
+        "low": 0.0001209858811417286,
+        "high": 0.0001209862875547777,
+        "elasticity": 0.000008397929628328348,
+        "max_relative_change": 0.000001679971048999296,
+        "status": "calculated"
+      },
+      {
+        "parameter": "water_residence_time_days",
+        "medium": "air",
+        "unit": "days",
+        "input": 30,
+        "baseline": 0.00012098608439484771,
+        "low": 0.0001209858903660613,
+        "high": 0.0001209862734475674,
+        "elasticity": 0.000007915817509543445,
+        "max_relative_change": 0.0000016037281261667136,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_free_to_small_y",
+        "medium": "soil",
+        "unit": "1/year",
+        "input": 2.2,
+        "baseline": 1.730640941181999,
+        "low": 1.7306435002035132,
+        "high": 1.7306385275756155,
+        "elasticity": -0.000007183217181771478,
+        "max_relative_change": 0.0000014786553659710302,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_free_settling_y",
+        "medium": "soil",
+        "unit": "1/year",
+        "input": 0.12,
+        "baseline": 1.730640941181999,
+        "low": 1.7306434921524891,
+        "high": 1.7306383981656541,
+        "elasticity": -0.0000073585264190257965,
+        "max_relative_change": 0.0000014740033183521027,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.soil_small_to_large_y",
+        "medium": "air",
+        "unit": "1/year",
+        "input": 0.25,
+        "baseline": 0.00012098608439484771,
+        "low": 0.00012098591536544284,
+        "high": 0.00012098624422589543,
+        "elasticity": 0.000006795418957493308,
+        "max_relative_change": 0.0000013970979036581406,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.air_particulate_transformation_y",
+        "medium": "sediment",
+        "unit": "1/year",
+        "input": 0.04,
+        "baseline": 43.0961322170392,
+        "low": 43.096072244537105,
+        "high": 43.09619217817423,
+        "elasticity": 0.0000069573318389061575,
+        "max_relative_change": 0.00000139159824810494,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_small_settling_y",
+        "medium": "soil",
+        "unit": "1/year",
+        "input": 0.65,
+        "baseline": 1.730640941181999,
+        "low": 1.7306432007201182,
+        "high": 1.7306387216734447,
+        "elasticity": -0.0000064702136748488,
+        "max_relative_change": 0.0000013056076887517695,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.sediment_large_fragmentation_y",
+        "medium": "water",
+        "unit": "1/year",
+        "input": 0.02,
+        "baseline": 0.0004096014845084829,
+        "low": 0.0004096010008089454,
+        "high": 0.00040960196601194464,
+        "elasticity": 0.0000058911102360243705,
+        "max_relative_change": 0.0000011809027940643897,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.soil_transformed_dissolution_y",
+        "medium": "air",
+        "unit": "1/year",
+        "input": 0.004,
+        "baseline": 0.00012098608439484771,
+        "low": 0.00012098621049161106,
+        "high": 0.00012098595844250729,
+        "elasticity": -0.000005208225082879206,
+        "max_relative_change": 0.0000010422418741668998,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.soil_transformed_dissolution_y",
+        "medium": "soil",
+        "unit": "1/year",
+        "input": 0.004,
+        "baseline": 1.730640941181999,
+        "low": 1.730639357050115,
+        "high": 1.730642523855412,
+        "elasticity": 0.000004574613401207226,
+        "max_relative_change": 9.153440475120619e-7,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.soil_transformed_dissolution_y",
+        "medium": "sediment",
+        "unit": "1/year",
+        "input": 0.004,
+        "baseline": 43.0961322170392,
+        "low": 43.096157085901034,
+        "high": 43.09610737118158,
+        "elasticity": -0.0000028839432273111273,
+        "max_relative_change": 5.770555397029698e-7,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.air_small_to_large_y",
+        "medium": "water",
+        "unit": "1/year",
+        "input": 0.35,
+        "baseline": 0.0004096014845084829,
+        "low": 0.00040960170928650014,
+        "high": 0.0004096012601074178,
+        "elasticity": -0.000002741561611212949,
+        "max_relative_change": 5.487724671868464e-7,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_large_dissolution_y",
+        "medium": "water",
+        "unit": "1/year",
+        "input": 0.015,
+        "baseline": 0.0004096014845084829,
+        "low": 0.0004096012643016116,
+        "high": 0.00040960170463257115,
+        "elasticity": 0.000002687557151120846,
+        "max_relative_change": 5.3761248340316e-7,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.air_small_to_large_y",
+        "medium": "sediment",
+        "unit": "1/year",
+        "input": 0.35,
+        "baseline": 43.0961322170392,
+        "low": 43.09610951952227,
+        "high": 43.096154876636525,
+        "elasticity": 0.0000026311592200712285,
+        "max_relative_change": 5.266717860250181e-7,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_large_dissolution_y",
+        "medium": "sediment",
+        "unit": "1/year",
+        "input": 0.015,
+        "baseline": 43.0961322170392,
+        "low": 43.09615464106458,
+        "high": 43.09610980128889,
+        "elasticity": -0.0000026011484896131993,
+        "max_relative_change": 5.203257050658047e-7,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.sediment_transformed_dissolution_y",
+        "medium": "sediment",
+        "unit": "1/year",
+        "input": 0.003,
+        "baseline": 43.0961322170392,
+        "low": 43.0961099190755,
+        "high": 43.096154500060386,
+        "elasticity": 0.0000025861360747884414,
+        "max_relative_change": 5.174005774719899e-7,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.sediment_large_fragmentation_y",
+        "medium": "sediment",
+        "unit": "1/year",
+        "input": 0.02,
+        "baseline": 43.0961322170392,
+        "low": 43.09614964692064,
+        "high": 43.096114854191725,
+        "elasticity": -0.000002018320851628198,
+        "max_relative_change": 4.044418963359004e-7,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_large_settling_y",
+        "medium": "soil",
+        "unit": "1/year",
+        "input": 3.5,
+        "baseline": 1.730640941181999,
+        "low": 1.7306415485798234,
+        "high": 1.730640382588313,
+        "elasticity": -0.0000016843348072797477,
+        "max_relative_change": 3.50966979936658e-7,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_dissolved_reprecipitation_y",
+        "medium": "sediment",
+        "unit": "1/year",
+        "input": 0.03,
+        "baseline": 43.0961322170392,
+        "low": 43.09611928200412,
+        "high": 43.096145139796675,
+        "elasticity": 0.0000015000065683151728,
+        "max_relative_change": 3.0014375803452116e-7,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_dissolved_reprecipitation_y",
+        "medium": "water",
+        "unit": "1/year",
+        "input": 0.03,
+        "baseline": 0.0004096014845084829,
+        "low": 0.00040960159970475395,
+        "high": 0.00040960136942411077,
+        "elasticity": -0.0000014055164098303018,
+        "max_relative_change": 2.812398767834025e-7,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_small_to_large_y",
+        "medium": "soil",
+        "unit": "1/year",
+        "input": 0.85,
+        "baseline": 1.730640941181999,
+        "low": 1.730641414153564,
+        "high": 1.730640479339405,
+        "elasticity": -0.0000013503872130922655,
+        "max_relative_change": 2.7329271703303555e-7,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.soil_large_fragmentation_y",
+        "medium": "sediment",
+        "unit": "1/year",
+        "input": 0.03,
+        "baseline": 43.0961322170392,
+        "low": 43.09612309478038,
+        "high": 43.096141288569946,
+        "elasticity": 0.0000010554189337145255,
+        "max_relative_change": 2.116723322369783e-7,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.sediment_burial_y",
+        "medium": "soil",
+        "unit": "1/year",
+        "input": 0.04,
+        "baseline": 1.730640941181999,
+        "low": 1.730641287872372,
+        "high": 1.730640598421774,
+        "elasticity": -9.959469083678372e-7,
+        "max_relative_change": 2.0032484198580076e-7,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.air_free_to_small_y",
+        "medium": "air",
+        "unit": "1/year",
+        "input": 1.5,
+        "baseline": 0.00012098608439484771,
+        "low": 0.00012098610068504323,
+        "high": 0.00012098606821934281,
+        "elasticity": -6.708560860224944e-7,
+        "max_relative_change": 1.3464519983737395e-7,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_transformed_dissolution_y",
+        "medium": "water",
+        "unit": "1/year",
+        "input": 0.01,
+        "baseline": 0.0004096014845084829,
+        "low": 0.00040960142962490986,
+        "high": 0.0004096015393758763,
+        "elasticity": 6.698643108231038e-7,
+        "max_relative_change": 1.3399261265143803e-7,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_transformed_dissolution_y",
+        "medium": "sediment",
+        "unit": "1/year",
+        "input": 0.01,
+        "baseline": 43.0961322170392,
+        "low": 43.096137363747864,
+        "high": 43.0961270718221,
+        "elasticity": -5.970330301090452e-7,
+        "max_relative_change": 1.1942391118626553e-7,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_transformed_settling_y",
+        "medium": "soil",
+        "unit": "1/year",
+        "input": 1.1,
+        "baseline": 1.730640941181999,
+        "low": 1.730641142666552,
+        "high": 1.7306407458523423,
+        "elasticity": -5.732185693039429e-7,
+        "max_relative_change": 1.1642192684069867e-7,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.sediment_dissolved_exchange_to_water_y",
+        "medium": "soil",
+        "unit": "1/year",
+        "input": 0.05,
+        "baseline": 1.730640941181999,
+        "low": 1.7306408201830177,
+        "high": 1.7306410605539917,
+        "elasticity": 3.472282555759385e-7,
+        "max_relative_change": 6.991570486960165e-8,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.sediment_free_to_small_y",
+        "medium": "soil",
+        "unit": "1/year",
+        "input": 0.35,
+        "baseline": 1.730640941181999,
+        "low": 1.730641059699649,
+        "high": 1.7306408319559263,
+        "elasticity": -3.2898754061284613e-7,
+        "max_relative_change": 6.84819406025531e-8,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.air_particulate_transformation_y",
+        "medium": "soil",
+        "unit": "1/year",
+        "input": 0.04,
+        "baseline": 1.730640941181999,
+        "low": 1.7306410562714587,
+        "high": 1.7306408261123494,
+        "elasticity": -3.324766909327572e-7,
+        "max_relative_change": 6.650106154402155e-8,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_particulate_transformation_y",
+        "medium": "soil",
+        "unit": "1/year",
+        "input": 0.08,
+        "baseline": 1.730640941181999,
+        "low": 1.7306410540610209,
+        "high": 1.7306408285426236,
+        "elasticity": -3.257729433117969e-7,
+        "max_relative_change": 6.52238250126456e-8,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.air_small_to_large_y",
+        "medium": "soil",
+        "unit": "1/year",
+        "input": 0.35,
+        "baseline": 1.730640941181999,
+        "low": 1.7306408474267265,
+        "high": 1.7306410347811019,
+        "elasticity": 2.7064304745279267e-7,
+        "max_relative_change": 5.417372847452648e-8,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.sediment_resuspension_to_water_y",
+        "medium": "air",
+        "unit": "1/year",
+        "input": 0.025,
+        "baseline": 0.00012098608439484771,
+        "low": 0.00012098607894923494,
+        "high": 0.00012098608979092228,
+        "elasticity": 2.2402756890556546e-7,
+        "max_relative_change": 4.501024068812964e-8,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.sediment_particulate_dissolution_y",
+        "medium": "soil",
+        "unit": "1/year",
+        "input": 0.008,
+        "baseline": 1.730640941181999,
+        "low": 1.7306408771002286,
+        "high": 1.7306410051181786,
+        "elasticity": 1.849285241268106e-7,
+        "max_relative_change": 3.702776746446362e-8,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_free_dissolution_y",
+        "medium": "soil",
+        "unit": "1/year",
+        "input": 0.08,
+        "baseline": 1.730640941181999,
+        "low": 1.7306408911354347,
+        "high": 1.7306409911233207,
+        "elasticity": 1.4443765253609707e-7,
+        "max_relative_change": 2.8917936144487083e-8,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.soil_large_fragmentation_y",
+        "medium": "air",
+        "unit": "1/year",
+        "input": 0.03,
+        "baseline": 0.00012098608439484771,
+        "low": 0.00012098608754572434,
+        "high": 0.00012098608126168035,
+        "elasticity": -1.298505531118859e-7,
+        "max_relative_change": 2.6043297813723468e-8,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.sediment_small_to_large_y",
+        "medium": "soil",
+        "unit": "1/year",
+        "input": 0.18,
+        "baseline": 1.730640941181999,
+        "low": 1.7306409772307432,
+        "high": 1.7306409065287711,
+        "elasticity": -1.0213264111045554e-7,
+        "max_relative_change": 2.0829707280185087e-8,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.sediment_particulate_transformation_y",
+        "medium": "soil",
+        "unit": "1/year",
+        "input": 0.07,
+        "baseline": 1.730640941181999,
+        "low": 1.7306409638303846,
+        "high": 1.7306409189052137,
+        "elasticity": -6.489672387794018e-8,
+        "max_relative_change": 1.308670393289187e-8,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_free_settling_y",
+        "medium": "air",
+        "unit": "1/year",
+        "input": 0.12,
+        "baseline": 0.00012098608439484771,
+        "low": 0.00012098608594456963,
+        "high": 0.00012098608284995888,
+        "elasticity": -6.394559268476983e-8,
+        "max_relative_change": 1.2809092218859277e-8,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_free_to_small_y",
+        "medium": "air",
+        "unit": "1/year",
+        "input": 2.2,
+        "baseline": 0.00012098608439484771,
+        "low": 0.00012098608588196641,
+        "high": 0.00012098608299223157,
+        "elasticity": -5.971213244463618e-8,
+        "max_relative_change": 1.229165076176763e-8,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_small_settling_y",
+        "medium": "air",
+        "unit": "1/year",
+        "input": 0.65,
+        "baseline": 0.00012098608439484771,
+        "low": 0.00012098608577113162,
+        "high": 0.00012098608304295024,
+        "elasticity": -5.637386721302721e-8,
+        "max_relative_change": 1.1375555408726316e-8,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_free_dissolution_y",
+        "medium": "air",
+        "unit": "1/year",
+        "input": 0.08,
+        "baseline": 0.00012098608439484771,
+        "low": 0.00012098608529311628,
+        "high": 0.00012098608349849856,
+        "elasticity": -3.7083143213424593e-8,
+        "max_relative_change": 7.424560975453324e-9,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_small_dissolution_y",
+        "medium": "soil",
+        "unit": "1/year",
+        "input": 0.04,
+        "baseline": 1.730640941181999,
+        "low": 1.7306409293607112,
+        "high": 1.7306409529900346,
+        "elasticity": 3.413377498556096e-8,
+        "max_relative_change": 6.830583655557682e-9,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.air_large_fragmentation_y",
+        "medium": "water",
+        "unit": "1/year",
+        "input": 0.08,
+        "baseline": 0.0004096014845084829,
+        "low": 0.0004096014824531345,
+        "high": 0.00040960148656304956,
+        "elasticity": 2.508483977995407e-8,
+        "max_relative_change": 5.017922254261252e-9,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.sediment_dissolved_reprecipitation_y",
+        "medium": "soil",
+        "unit": "1/year",
+        "input": 0.18,
+        "baseline": 1.730640941181999,
+        "low": 1.730640949532431,
+        "high": 1.7306409331559784,
+        "elasticity": -2.3656629530598242e-8,
+        "max_relative_change": 4.825051762525774e-9,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.air_particulate_transformation_y",
+        "medium": "air",
+        "unit": "1/year",
+        "input": 0.04,
+        "baseline": 0.00012098608439484771,
+        "low": 0.00012098608400637095,
+        "high": 0.0001209860847832487,
+        "elasticity": 1.605303932711843e-8,
+        "max_relative_change": 3.210921065624502e-9,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_large_settling_y",
+        "medium": "air",
+        "unit": "1/year",
+        "input": 3.5,
+        "baseline": 0.00012098608439484771,
+        "low": 0.00012098608476542124,
+        "high": 0.00012098608405405378,
+        "elasticity": -1.4699365319693528e-8,
+        "max_relative_change": 3.062943380187189e-9,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_small_to_large_y",
+        "medium": "air",
+        "unit": "1/year",
+        "input": 0.85,
+        "baseline": 0.00012098608439484771,
+        "low": 0.00012098608468040888,
+        "high": 0.00012098608411600703,
+        "elasticity": -1.1662536518482075e-8,
+        "max_relative_change": 2.360281082019248e-9,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.air_large_fragmentation_y",
+        "medium": "sediment",
+        "unit": "1/year",
+        "input": 0.08,
+        "baseline": 43.0961322170392,
+        "low": 43.09613231320044,
+        "high": 43.09613212091445,
+        "elasticity": -1.1154480996000762e-8,
+        "max_relative_change": 2.2313195953732107e-9,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_large_fragmentation_y",
+        "medium": "soil",
+        "unit": "1/year",
+        "input": 0.12,
+        "baseline": 1.730640941181999,
+        "low": 1.730640937415403,
+        "high": 1.730640944938157,
+        "elasticity": 1.0867005680234781e-8,
+        "max_relative_change": 2.176416745044738e-9,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.sediment_burial_y",
+        "medium": "air",
+        "unit": "1/year",
+        "input": 0.04,
+        "baseline": 0.00012098608439484771,
+        "low": 0.00012098608460370158,
+        "high": 0.00012098608418836105,
+        "elasticity": -8.58240297276657e-9,
+        "max_relative_change": 1.7262635081219966e-9,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_transformed_settling_y",
+        "medium": "air",
+        "unit": "1/year",
+        "input": 1.1,
+        "baseline": 0.00012098608439484771,
+        "low": 0.00012098608451912587,
+        "high": 0.00012098608427436614,
+        "elasticity": -5.057600753529271e-9,
+        "max_relative_change": 1.027210293383984e-9,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.sediment_transformed_dissolution_y",
+        "medium": "soil",
+        "unit": "1/year",
+        "input": 0.003,
+        "baseline": 1.730640941181999,
+        "low": 1.7306409398541918,
+        "high": 1.7306409425089462,
+        "elasticity": 3.834929523978671e-9,
+        "max_relative_change": 7.672343615190241e-10,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_small_dissolution_y",
+        "medium": "air",
+        "unit": "1/year",
+        "input": 0.04,
+        "baseline": 0.00012098608439484771,
+        "low": 0.00012098608446777798,
+        "high": 0.00012098608432200005,
+        "elasticity": -3.0122872243172452e-9,
+        "max_relative_change": 6.027988173999247e-10,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.sediment_free_to_small_y",
+        "medium": "air",
+        "unit": "1/year",
+        "input": 0.35,
+        "baseline": 0.00012098608439484771,
+        "low": 0.00012098608446415631,
+        "high": 0.00012098608433094922,
+        "elasticity": -2.7525293281536277e-9,
+        "max_relative_change": 5.728642265328381e-10,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.air_small_to_large_y",
+        "medium": "air",
+        "unit": "1/year",
+        "input": 0.35,
+        "baseline": 0.00012098608439484771,
+        "low": 0.00012098608433755713,
+        "high": 0.00012098608445204288,
+        "elasticity": 2.365680032905805e-9,
+        "max_relative_change": 4.735303632717803e-10,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_large_dissolution_y",
+        "medium": "soil",
+        "unit": "1/year",
+        "input": 0.015,
+        "baseline": 1.730640941181999,
+        "low": 1.7306409404636809,
+        "high": 1.7306409419000528,
+        "elasticity": 2.07491322451993e-9,
+        "max_relative_change": 4.1505898456334954e-10,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_particulate_transformation_y",
+        "medium": "air",
+        "unit": "1/year",
+        "input": 0.08,
+        "baseline": 0.00012098608439484771,
+        "low": 0.00012098608444416543,
+        "high": 0.00012098608434562983,
+        "elasticity": -2.036093670296204e-9,
+        "max_relative_change": 4.076312935512309e-10,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.sediment_large_fragmentation_y",
+        "medium": "soil",
+        "unit": "1/year",
+        "input": 0.02,
+        "baseline": 1.730640941181999,
+        "low": 1.7306409407118237,
+        "high": 1.7306409416504043,
+        "elasticity": 1.355827954086808e-9,
+        "max_relative_change": 2.716769382331487e-10,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_dissolved_reprecipitation_y",
+        "medium": "soil",
+        "unit": "1/year",
+        "input": 0.03,
+        "baseline": 1.730640941181999,
+        "low": 1.7306409416363486,
+        "high": 1.7306409407280785,
+        "elasticity": -1.3120429896285033e-9,
+        "max_relative_change": 2.625326017589357e-10,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.sediment_particulate_dissolution_y",
+        "medium": "air",
+        "unit": "1/year",
+        "input": 0.008,
+        "baseline": 0.00012098608439484771,
+        "low": 0.00012098608442329169,
+        "high": 0.0001209860843664708,
+        "elasticity": -1.174120454531678e-9,
+        "max_relative_change": 2.351012215561275e-10,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.sediment_small_to_large_y",
+        "medium": "air",
+        "unit": "1/year",
+        "input": 0.18,
+        "baseline": 0.00012098608439484771,
+        "low": 0.00012098608441657037,
+        "high": 0.00012098608437396392,
+        "elasticity": -8.803997715705619e-10,
+        "max_relative_change": 1.7954671984163168e-10,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.air_large_fragmentation_y",
+        "medium": "soil",
+        "unit": "1/year",
+        "input": 0.08,
+        "baseline": 1.730640941181999,
+        "low": 1.7306409414422703,
+        "high": 1.7306409409218273,
+        "elasticity": -7.518067578713994e-10,
+        "max_relative_change": 1.503901553617204e-10,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_transformed_dissolution_y",
+        "medium": "soil",
+        "unit": "1/year",
+        "input": 0.01,
+        "baseline": 1.730640941181999,
+        "low": 1.730640941004223,
+        "high": 1.7306409413597235,
+        "elasticity": 5.135388130676196e-10,
+        "max_relative_change": 1.027226456395511e-10,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.sediment_particulate_transformation_y",
+        "medium": "air",
+        "unit": "1/year",
+        "input": 0.07,
+        "baseline": 0.00012098608439484771,
+        "low": 0.00012098608440305574,
+        "high": 0.00012098608438677365,
+        "elasticity": -3.3644545820918773e-10,
+        "max_relative_change": 6.7842680837986e-11,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.sediment_dissolved_exchange_to_water_y",
+        "medium": "air",
+        "unit": "1/year",
+        "input": 0.05,
+        "baseline": 0.00012098608439484771,
+        "low": 0.00012098608438849674,
+        "high": 0.00012098608440112877,
+        "elasticity": 2.610222907511378e-10,
+        "max_relative_change": 5.2493406618755474e-11,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.sediment_dissolved_reprecipitation_y",
+        "medium": "air",
+        "unit": "1/year",
+        "input": 0.18,
+        "baseline": 0.00012098608439484771,
+        "low": 0.00012098608439122359,
+        "high": 0.0001209860843983265,
+        "elasticity": 1.467711477538415e-10,
+        "max_relative_change": 2.995486598738262e-11,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_dissolved_reprecipitation_y",
+        "medium": "air",
+        "unit": "1/year",
+        "input": 0.03,
+        "baseline": 0.00012098608439484771,
+        "low": 0.00012098608439240478,
+        "high": 0.00012098608439728832,
+        "elasticity": 1.0091129002353502e-10,
+        "max_relative_change": 2.019189148727859e-11,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_large_fragmentation_y",
+        "medium": "air",
+        "unit": "1/year",
+        "input": 0.12,
+        "baseline": 0.00012098608439484771,
+        "low": 0.00012098608439257367,
+        "high": 0.00012098608439711547,
+        "elasticity": 9.384972326408578e-11,
+        "max_relative_change": 1.8795932652312592e-11,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_large_dissolution_y",
+        "medium": "air",
+        "unit": "1/year",
+        "input": 0.015,
+        "baseline": 0.00012098608439484771,
+        "low": 0.00012098608439614046,
+        "high": 0.00012098608439355544,
+        "elasticity": -5.3415700557745405e-11,
+        "max_relative_change": 1.068510041323516e-11,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_transformed_dissolution_y",
+        "medium": "air",
+        "unit": "1/year",
+        "input": 0.01,
+        "baseline": 0.00012098608439484771,
+        "low": 0.00012098608439582644,
+        "high": 0.00012098608439386929,
+        "elasticity": -4.044158386998668e-11,
+        "max_relative_change": 8.089548963628585e-12,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.sediment_transformed_dissolution_y",
+        "medium": "air",
+        "unit": "1/year",
+        "input": 0.003,
+        "baseline": 0.00012098608439484771,
+        "low": 0.0001209860843954252,
+        "high": 0.00012098608439427062,
+        "elasticity": -2.385771164886419e-11,
+        "max_relative_change": 4.773166579741303e-12,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.sediment_large_fragmentation_y",
+        "medium": "air",
+        "unit": "1/year",
+        "input": 0.02,
+        "baseline": 0.00012098608439484771,
+        "low": 0.00012098608439456508,
+        "high": 0.0001209860843951293,
+        "elasticity": 1.1658754256400337e-11,
+        "max_relative_change": 2.3361195236090413e-12,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.air_large_fragmentation_y",
+        "medium": "air",
+        "unit": "1/year",
+        "input": 0.08,
+        "baseline": 0.00012098608439484771,
+        "low": 0.00012098608439500636,
+        "high": 0.00012098608439468914,
+        "elasticity": -6.554968795147067e-12,
+        "max_relative_change": 1.3112738021274246e-12,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.air_matrix_weathering_y",
+        "medium": "air",
+        "unit": "1/year",
+        "input": 0.15,
+        "baseline": 0.00012098608439484771,
+        "low": 0.00012098608439484771,
+        "high": 0.00012098608439484771,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.air_matrix_weathering_y",
+        "medium": "water",
+        "unit": "1/year",
+        "input": 0.15,
+        "baseline": 0.0004096014845084829,
+        "low": 0.0004096014845084829,
+        "high": 0.0004096014845084829,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.air_matrix_weathering_y",
+        "medium": "soil",
+        "unit": "1/year",
+        "input": 0.15,
+        "baseline": 1.730640941181999,
+        "low": 1.730640941181999,
+        "high": 1.730640941181999,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.air_matrix_weathering_y",
+        "medium": "sediment",
+        "unit": "1/year",
+        "input": 0.15,
+        "baseline": 43.0961322170392,
+        "low": 43.0961322170392,
+        "high": 43.0961322170392,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_matrix_weathering_y",
+        "medium": "air",
+        "unit": "1/year",
+        "input": 0.35,
+        "baseline": 0.00012098608439484771,
+        "low": 0.00012098608439484771,
+        "high": 0.00012098608439484771,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_matrix_weathering_y",
+        "medium": "water",
+        "unit": "1/year",
+        "input": 0.35,
+        "baseline": 0.0004096014845084829,
+        "low": 0.0004096014845084829,
+        "high": 0.0004096014845084829,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_matrix_weathering_y",
+        "medium": "soil",
+        "unit": "1/year",
+        "input": 0.35,
+        "baseline": 1.730640941181999,
+        "low": 1.730640941181999,
+        "high": 1.730640941181999,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_matrix_weathering_y",
+        "medium": "sediment",
+        "unit": "1/year",
+        "input": 0.35,
+        "baseline": 43.0961322170392,
+        "low": 43.0961322170392,
+        "high": 43.0961322170392,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.soil_matrix_weathering_y",
+        "medium": "air",
+        "unit": "1/year",
+        "input": 0.08,
+        "baseline": 0.00012098608439484771,
+        "low": 0.00012098608439484771,
+        "high": 0.00012098608439484771,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.soil_matrix_weathering_y",
+        "medium": "water",
+        "unit": "1/year",
+        "input": 0.08,
+        "baseline": 0.0004096014845084829,
+        "low": 0.0004096014845084829,
+        "high": 0.0004096014845084829,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.soil_matrix_weathering_y",
+        "medium": "soil",
+        "unit": "1/year",
+        "input": 0.08,
+        "baseline": 1.730640941181999,
+        "low": 1.730640941181999,
+        "high": 1.730640941181999,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.soil_matrix_weathering_y",
+        "medium": "sediment",
+        "unit": "1/year",
+        "input": 0.08,
+        "baseline": 43.0961322170392,
+        "low": 43.0961322170392,
+        "high": 43.0961322170392,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.sediment_matrix_weathering_y",
+        "medium": "air",
+        "unit": "1/year",
+        "input": 0.03,
+        "baseline": 0.00012098608439484771,
+        "low": 0.00012098608439484771,
+        "high": 0.00012098608439484771,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.sediment_matrix_weathering_y",
+        "medium": "water",
+        "unit": "1/year",
+        "input": 0.03,
+        "baseline": 0.0004096014845084829,
+        "low": 0.0004096014845084829,
+        "high": 0.0004096014845084829,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.sediment_matrix_weathering_y",
+        "medium": "soil",
+        "unit": "1/year",
+        "input": 0.03,
+        "baseline": 1.730640941181999,
+        "low": 1.730640941181999,
+        "high": 1.730640941181999,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.sediment_matrix_weathering_y",
+        "medium": "sediment",
+        "unit": "1/year",
+        "input": 0.03,
+        "baseline": 43.0961322170392,
+        "low": 43.0961322170392,
+        "high": 43.0961322170392,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_matrix_dissolution_y",
+        "medium": "air",
+        "unit": "1/year",
+        "input": 0.015,
+        "baseline": 0.00012098608439484771,
+        "low": 0.00012098608439484771,
+        "high": 0.00012098608439484771,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_matrix_dissolution_y",
+        "medium": "water",
+        "unit": "1/year",
+        "input": 0.015,
+        "baseline": 0.0004096014845084829,
+        "low": 0.0004096014845084829,
+        "high": 0.0004096014845084829,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_matrix_dissolution_y",
+        "medium": "soil",
+        "unit": "1/year",
+        "input": 0.015,
+        "baseline": 1.730640941181999,
+        "low": 1.730640941181999,
+        "high": 1.730640941181999,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_matrix_dissolution_y",
+        "medium": "sediment",
+        "unit": "1/year",
+        "input": 0.015,
+        "baseline": 43.0961322170392,
+        "low": 43.0961322170392,
+        "high": 43.0961322170392,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_matrix_settling_y",
+        "medium": "air",
+        "unit": "1/year",
+        "input": 0.55,
+        "baseline": 0.00012098608439484771,
+        "low": 0.00012098608439484771,
+        "high": 0.00012098608439484771,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_matrix_settling_y",
+        "medium": "water",
+        "unit": "1/year",
+        "input": 0.55,
+        "baseline": 0.0004096014845084829,
+        "low": 0.0004096014845084829,
+        "high": 0.0004096014845084829,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_matrix_settling_y",
+        "medium": "soil",
+        "unit": "1/year",
+        "input": 0.55,
+        "baseline": 1.730640941181999,
+        "low": 1.730640941181999,
+        "high": 1.730640941181999,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_matrix_settling_y",
+        "medium": "sediment",
+        "unit": "1/year",
+        "input": 0.55,
+        "baseline": 43.0961322170392,
+        "low": 43.0961322170392,
+        "high": 43.0961322170392,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_unresolved_settling_y",
+        "medium": "air",
+        "unit": "1/year",
+        "input": 0.35,
+        "baseline": 0.00012098608439484771,
+        "low": 0.00012098608439484771,
+        "high": 0.00012098608439484771,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_unresolved_settling_y",
+        "medium": "water",
+        "unit": "1/year",
+        "input": 0.35,
+        "baseline": 0.0004096014845084829,
+        "low": 0.0004096014845084829,
+        "high": 0.0004096014845084829,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_unresolved_settling_y",
+        "medium": "soil",
+        "unit": "1/year",
+        "input": 0.35,
+        "baseline": 1.730640941181999,
+        "low": 1.730640941181999,
+        "high": 1.730640941181999,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      },
+      {
+        "parameter": "rates.water_unresolved_settling_y",
+        "medium": "sediment",
+        "unit": "1/year",
+        "input": 0.35,
+        "baseline": 43.0961322170392,
+        "low": 43.0961322170392,
+        "high": 43.0961322170392,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      },
+      {
+        "parameter": "environment.river_flow_m3_s",
+        "medium": "air",
+        "unit": "m3/s",
+        "input": 100,
+        "baseline": 0.00012098608439484771,
+        "low": 0.00012098608439484771,
+        "high": 0.00012098608439484771,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      },
+      {
+        "parameter": "environment.river_flow_m3_s",
+        "medium": "soil",
+        "unit": "m3/s",
+        "input": 100,
+        "baseline": 1.730640941181999,
+        "low": 1.730640941181999,
+        "high": 1.730640941181999,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      },
+      {
+        "parameter": "environment.river_flow_m3_s",
+        "medium": "sediment",
+        "unit": "m3/s",
+        "input": 100,
+        "baseline": 43.0961322170392,
+        "low": 43.0961322170392,
+        "high": 43.0961322170392,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      },
+      {
+        "parameter": "environment.soil_area_ha",
+        "medium": "air",
+        "unit": "ha",
+        "input": 1000,
+        "baseline": 0.00012098608439484771,
+        "low": 0.00012098608439484771,
+        "high": 0.00012098608439484771,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      },
+      {
+        "parameter": "environment.soil_area_ha",
+        "medium": "water",
+        "unit": "ha",
+        "input": 1000,
+        "baseline": 0.0004096014845084829,
+        "low": 0.0004096014845084829,
+        "high": 0.0004096014845084829,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      },
+      {
+        "parameter": "environment.soil_area_ha",
+        "medium": "sediment",
+        "unit": "ha",
+        "input": 1000,
+        "baseline": 43.0961322170392,
+        "low": 43.0961322170392,
+        "high": 43.0961322170392,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      },
+      {
+        "parameter": "environment.soil_depth_m",
+        "medium": "air",
+        "unit": "m",
+        "input": 0.2,
+        "baseline": 0.00012098608439484771,
+        "low": 0.00012098608439484771,
+        "high": 0.00012098608439484771,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      },
+      {
+        "parameter": "environment.soil_depth_m",
+        "medium": "water",
+        "unit": "m",
+        "input": 0.2,
+        "baseline": 0.0004096014845084829,
+        "low": 0.0004096014845084829,
+        "high": 0.0004096014845084829,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      },
+      {
+        "parameter": "environment.soil_depth_m",
+        "medium": "sediment",
+        "unit": "m",
+        "input": 0.2,
+        "baseline": 43.0961322170392,
+        "low": 43.0961322170392,
+        "high": 43.0961322170392,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      },
+      {
+        "parameter": "environment.soil_bulk_density_kg_m3",
+        "medium": "air",
+        "unit": "kg/m3",
+        "input": 1300,
+        "baseline": 0.00012098608439484771,
+        "low": 0.00012098608439484771,
+        "high": 0.00012098608439484771,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      },
+      {
+        "parameter": "environment.soil_bulk_density_kg_m3",
+        "medium": "water",
+        "unit": "kg/m3",
+        "input": 1300,
+        "baseline": 0.0004096014845084829,
+        "low": 0.0004096014845084829,
+        "high": 0.0004096014845084829,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      },
+      {
+        "parameter": "environment.soil_bulk_density_kg_m3",
+        "medium": "sediment",
+        "unit": "kg/m3",
+        "input": 1300,
+        "baseline": 43.0961322170392,
+        "low": 43.0961322170392,
+        "high": 43.0961322170392,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      },
+      {
+        "parameter": "environment.sediment_area_km2",
+        "medium": "air",
+        "unit": "km2",
+        "input": 1,
+        "baseline": 0.00012098608439484771,
+        "low": 0.00012098608439484771,
+        "high": 0.00012098608439484771,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      },
+      {
+        "parameter": "environment.sediment_area_km2",
+        "medium": "water",
+        "unit": "km2",
+        "input": 1,
+        "baseline": 0.0004096014845084829,
+        "low": 0.0004096014845084829,
+        "high": 0.0004096014845084829,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      },
+      {
+        "parameter": "environment.sediment_area_km2",
+        "medium": "soil",
+        "unit": "km2",
+        "input": 1,
+        "baseline": 1.730640941181999,
+        "low": 1.730640941181999,
+        "high": 1.730640941181999,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      },
+      {
+        "parameter": "environment.sediment_depth_m",
+        "medium": "air",
+        "unit": "m",
+        "input": 0.05,
+        "baseline": 0.00012098608439484771,
+        "low": 0.00012098608439484771,
+        "high": 0.00012098608439484771,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      },
+      {
+        "parameter": "environment.sediment_depth_m",
+        "medium": "water",
+        "unit": "m",
+        "input": 0.05,
+        "baseline": 0.0004096014845084829,
+        "low": 0.0004096014845084829,
+        "high": 0.0004096014845084829,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      },
+      {
+        "parameter": "environment.sediment_depth_m",
+        "medium": "soil",
+        "unit": "m",
+        "input": 0.05,
+        "baseline": 1.730640941181999,
+        "low": 1.730640941181999,
+        "high": 1.730640941181999,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      },
+      {
+        "parameter": "environment.sediment_bulk_density_kg_m3",
+        "medium": "air",
+        "unit": "kg/m3",
+        "input": 1300,
+        "baseline": 0.00012098608439484771,
+        "low": 0.00012098608439484771,
+        "high": 0.00012098608439484771,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      },
+      {
+        "parameter": "environment.sediment_bulk_density_kg_m3",
+        "medium": "water",
+        "unit": "kg/m3",
+        "input": 1300,
+        "baseline": 0.0004096014845084829,
+        "low": 0.0004096014845084829,
+        "high": 0.0004096014845084829,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      },
+      {
+        "parameter": "environment.sediment_bulk_density_kg_m3",
+        "medium": "soil",
+        "unit": "kg/m3",
+        "input": 1300,
+        "baseline": 1.730640941181999,
+        "low": 1.730640941181999,
+        "high": 1.730640941181999,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      },
+      {
+        "parameter": "environment.air_mixing_height_m",
+        "medium": "water",
+        "unit": "m",
+        "input": 1000,
+        "baseline": 0.0004096014845084829,
+        "low": 0.0004096014845084829,
+        "high": 0.0004096014845084829,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      },
+      {
+        "parameter": "environment.air_mixing_height_m",
+        "medium": "soil",
+        "unit": "m",
+        "input": 1000,
+        "baseline": 1.730640941181999,
+        "low": 1.730640941181999,
+        "high": 1.730640941181999,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      },
+      {
+        "parameter": "environment.air_mixing_height_m",
+        "medium": "sediment",
+        "unit": "m",
+        "input": 1000,
+        "baseline": 43.0961322170392,
+        "low": 43.0961322170392,
+        "high": 43.0961322170392,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      },
+      {
+        "parameter": "region.area_km2",
+        "medium": "water",
+        "unit": "km2",
+        "input": 100459.873,
+        "baseline": 0.0004096014845084829,
+        "low": 0.0004096014845084829,
+        "high": 0.0004096014845084829,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      },
+      {
+        "parameter": "region.area_km2",
+        "medium": "soil",
+        "unit": "km2",
+        "input": 100459.873,
+        "baseline": 1.730640941181999,
+        "low": 1.730640941181999,
+        "high": 1.730640941181999,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      },
+      {
+        "parameter": "region.area_km2",
+        "medium": "sediment",
+        "unit": "km2",
+        "input": 100459.873,
+        "baseline": 43.0961322170392,
+        "low": 43.0961322170392,
+        "high": 43.0961322170392,
+        "elasticity": 0,
+        "max_relative_change": 0,
+        "status": "calculated"
+      }
+    ],
+    "scope": "Fate kinetics and environmental capacities. Upstream MFA emissions held fixed. Derived rates are recomputed. Zero-valued parameters excluded from multiplicative perturbation.",
+    "limitations": "Not a global sensitivity ranking; interactions and alternative model structures are not resolved."
+  }
+}

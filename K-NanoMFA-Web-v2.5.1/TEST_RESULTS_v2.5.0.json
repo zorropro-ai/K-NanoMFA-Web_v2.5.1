@@ -1,0 +1,93 @@
+[
+  {
+    "test": "test_advanced.js",
+    "passed": true,
+    "seconds": 0.336,
+    "output": "Advanced reconciliation, stock-driven MFA, multimedia fate, and validation tests passed.\n",
+    "error": ""
+  },
+  {
+    "test": "test_benchmark_v230.js",
+    "passed": true,
+    "seconds": 0.027,
+    "output": "{\n  \"coverage\": {\n    \"records\": 27,\n    \"studies\": 11,\n    \"materials\": [\n      \"AgNP\",\n      \"CNT\",\n      \"Carbon black\",\n      \"Fullerenes\",\n      \"Graphene\",\n      \"Nanocellulose\",\n      \"nano-SiO2\",\n      \"nano-TiO2\",\n      \"nano-ZnO\"\n    ],\n    \"material_count\": 9\n  },\n  \"cnt_records\": 11,\n  \"cnt_summary\": {\n    \"records\": 11,\n    \"studies\": 5,\n    \"study_weighted_mean_applicability\": 68.91666666666667,\n    \"applicability_level\": \"Moderate\",\n    \"applicability_weighted_concordance\": 100,\n    \"concordance_level\": \"High\",\n    \"strong_concordance_records\": 11\n  }\n}\n",
+    "error": ""
+  },
+  {
+    "test": "test_custom_material.js",
+    "passed": true,
+    "seconds": 0.036,
+    "output": "Custom-material engine test passed.\n",
+    "error": ""
+  },
+  {
+    "test": "test_dynamic_fate.js",
+    "passed": true,
+    "seconds": 0.923,
+    "output": "{\n  \"static_closure_pct\": 99.99999999999967,\n  \"static_converged\": false,\n  \"static_iterations\": 300,\n  \"dynamic_closure_pct\": 99.99999999999993,\n  \"dynamic_years\": 9,\n  \"final_stock_kg\": 762.1748203922277,\n  \"external_rows\": 3,\n  \"uncertainty_iterations\": 20,\n  \"status\": \"passed\"\n}\n",
+    "error": ""
+  },
+  {
+    "test": "test_dynamic_fate_v201.js",
+    "passed": true,
+    "seconds": 0.785,
+    "output": "{\n  \"exact_substep_independence_kg\": 0,\n  \"legacy365_stock_relative_difference\": 0.000029246873706949804,\n  \"legacy365_water_PEC_relative_difference\": 0.0016274313865253744,\n  \"exact_closure_pct\": 99.99999999999997,\n  \"static_converged\": false,\n  \"static_iterations\": 350,\n  \"csv_rows\": 2,\n  \"status\": \"passed\"\n}\n",
+    "error": ""
+  },
+  {
+    "test": "test_engine.js",
+    "passed": true,
+    "seconds": 0.294,
+    "output": "KR Republic of Korea OK\nCN China OK\nUS United States OK\nJP Japan OK\nDE Germany OK\nFR France OK\nGB United Kingdom OK\nIN India OK\nCA Canada OK\nAU Australia OK\nAll country-domain, material, mass-balance and PEC tests passed.\n",
+    "error": ""
+  },
+  {
+    "test": "test_geography.js",
+    "passed": true,
+    "seconds": 0.045,
+    "output": "Custom-geography registry, validation, static MFA, dynamic MFA, mass-balance and PEC tests passed.\n",
+    "error": ""
+  },
+  {
+    "test": "test_mixture.js",
+    "passed": true,
+    "seconds": 0.09,
+    "output": "Multi-material deterministic, formulation, dynamic, and joint uncertainty tests passed. {\n  totalWater: 0.00019888282794918049,\n  hi: 0.005202337331693695,\n  P50: 0.0051540682554625334\n}\n",
+    "error": ""
+  },
+  {
+    "test": "test_nanoform.js",
+    "passed": true,
+    "seconds": 0.041,
+    "output": "{\n  \"static_closure_pct\": 99.99999999999999,\n  \"dynamic_closure_pct\": 100,\n  \"static_state_mass_kg\": 999.9999999999999,\n  \"dynamic_state_mass_kg\": 10159.106127641488,\n  \"state_count\": 7,\n  \"status\": \"passed\"\n}\n",
+    "error": ""
+  },
+  {
+    "test": "test_product_inventory.js",
+    "passed": true,
+    "seconds": 0.112,
+    "output": "Product-informed static, dynamic, uncertainty, compatibility, and mass-balance tests passed. {\n  static_total_kg_y: 322.5,\n  final_dynamic_input_kg_y: 438.87588300000004\n}\n",
+    "error": ""
+  },
+  {
+    "test": "test_regression_v121.js",
+    "passed": true,
+    "seconds": 0.033,
+    "output": "v1.2.1 regression tests passed.\n",
+    "error": ""
+  },
+  {
+    "test": "test_reliability_v240.js",
+    "passed": true,
+    "seconds": 21.036,
+    "output": "{\n  \"status\": \"passed\",\n  \"count\": 11,\n  \"checks\": [\n    \"Hydraulic box steady concentration and residence-time invariance\",\n    \"ZnO-to-Zn and inverse imported-mass conversion\",\n    \"Missing years rejected or explicitly filled; initial stocks close\",\n    \"Annual mean differs correctly from year-end concentration\",\n    \"Invalid residence times, NaN rates, composition and blank CSV rejected\",\n    \"Physical settling and aggregation follow supplied primitive quantities\",\n    \"Four-compartment exact fast-rate and initial-stock balance\",\n    \"Linked uncertainty at zero CV reproduces deterministic output\",\n    \"Observation endpoint, year, unit and basis matching; censoring excluded\",\n    \"No release after retirement and zero first-cohort cache regression\",\n    \"Carbon presets do not inherit metal-like dissolution\"\n  ]\n}\n",
+    "error": ""
+  },
+  {
+    "test": "test_reliability_v250.js",
+    "passed": true,
+    "seconds": 0.094,
+    "output": "{\n  \"status\": \"passed\",\n  \"checks\": [\n    \"Reject false convergence masked by 1000 kg unchanged soil\",\n    \"Four-state diagnostic: trapped forcing rejected, removable forcing accepted\",\n    \"ZnO initial stock round trip and input rows unchanged\",\n    \"Simultaneous storm uses pre-event stocks and conserves mass\",\n    \"Evidence flags domain, material, unit and applicability mismatch\",\n    \"Observation metadata and calibration overlap prevent validation claim\",\n    \"Local hydraulic sensitivity matches analytical reciprocal response\",\n    \"Zero kinetic CV override yields deterministic kinetic interval\",\n    \"Linked physical sampling preserves close diameter order\",\n    \"Custom elemental fraction changes convert existing stock\"\n  ]\n}\n",
+    "error": ""
+  }
+]
